@@ -1,0 +1,38 @@
+@import "tailwindcss";
+
+@theme {
+  --color-primary: #f6466c;
+  --color-secondary: #f28b00;
+  --color-elegantDark: #1a1a1a;
+  --color-elegantLight: #faf7f4;
+}
+/* ===== GLOBAL RESPONSIVE FIX ===== */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  width: 100%;
+  max-width: 100%;
+  overflow-x: hidden;
+  margin: 0;
+  padding: 0;
+}
+
+/* accidental 100vw / w-screen protection */
+body {
+  position: relative;
+}
+
+/* images & videos safety */
+img,
+video,
+svg {
+  max-width: 100%;
+  height: auto;
+}
