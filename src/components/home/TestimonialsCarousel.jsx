@@ -39,7 +39,7 @@ const testimonialsData = [
 const TestimonialCard = ({ testimonial }) => {
   const Icon = testimonial.icon;
   return (
-    <div className="bg-linear-to-br from-primary to-secondary line-clamp-4 rounded-2xl p-6 md:p-8  w-full max-w-[350px] mx-auto shrink-0">
+    <div className="bg-linear-to-br from-primary to-secondary line-clamp-4 rounded-2xl p-6 md:p-8  w-full max-w-[300px] mx-auto shrink-0">
       <div className="flex justify-center mb-6">
         <div className="w-24 h-24 md:w-28 md:h-28 rounded-full bg-white flex items-center justify-center border-4 border-secondary shadow-lg">
           <Icon className="w-10 h-10 md:w-12 md:h-12 text-primary" strokeWidth={1.5} />

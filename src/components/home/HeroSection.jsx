@@ -138,21 +138,16 @@ const handleEnroll = () =>{
               className="flex flex-col sm:flex-row gap-4 pt-4"
             >
               <motion.button
-              onClick={handleEnroll}
-                whileHover={{ scale: 1.05, y: -2 }}
-                whileTap={{ scale: 0.95 }}
-                aria-label="Enroll in dance classes now"
-                className="px-8 py-4 
-  max-sm:px-3 max-sm:py-2
-  sm:px-2 
-  lg:px-8  font-semibold text-base  cursor-pointer rounded-full border-2 border-white/30 shadow-2xl transition-shadow duration-300"
-                style={{
-                  background: `linear-gradient(135deg, var(--color-primary) 0%, var(--color-secondary) 100%)`,
-                  color: "white",
-                }}
-              >
-                Enroll Now
-              </motion.button>
+                        onClick={handleEnroll}
+                          whileHover={{ scale: 1.05, y: -2 }}
+                          whileTap={{ scale: 0.95 }}
+                          className="px-8 py-4 rounded-full font-semibold text-white shadow-xl cursor-pointer"
+                          style={{
+                            background: `linear-gradient(135deg, var(--color-primary), var(--color-secondary))`
+                          }}
+                        >
+                          Enroll Now
+                        </motion.button>
 
               
             </motion.div>
