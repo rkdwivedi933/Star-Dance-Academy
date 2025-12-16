@@ -100,18 +100,18 @@ const handleEnroll = () =>{
         style={{ background: "var(--color-elegantLight)" }}
       />
 
-      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 lg:py-0">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 lg:py-10">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-18 lg:gap-16 items-center mb-24 ">
           {/* LEFT COLUMN (ORDER FIRST ON MOBILE) */}
           <motion.div
             variants={containerVariants}
             initial="hidden"
             animate="visible"
-            className="text-white space-y-6 lg:space-y-8 z-10 order-1 lg:order-0"
+            className="text-white space-y-6 lg:space-y-8 z-10 order-1 lg:order-0  "
           >
             <motion.div
               variants={itemVariants}
-              className="inline-flex items-center space-x-2 px-4 py-2 rounded-full bg-white/10 backdrop-blur-sm border border-white/20"
+              className="inline-flex items-center space-x-2 px-4 py-2  rounded-full bg-white/10 backdrop-blur-sm border border-white/20"
             >
               <Sparkles className="w-4 h-4" />
               <span className="text-sm font-medium">Welcome to Star Dance</span>

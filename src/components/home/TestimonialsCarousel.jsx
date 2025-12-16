@@ -47,7 +47,7 @@ const TestimonialCard = ({ testimonial }) => {
       </div>
       <h3 className="text-white text-xl md:text-2xl font-bold text-center mb-2">{testimonial.title}</h3>
      
-      <p className="text-gray-900 text-center leading-relaxed italic text-sm md:text-base">{testimonial.description}</p>
+      <p className="text-gray-900 text-center leading-relaxed italic text-sm md:text-base pb-5">{testimonial.description}</p>
     </div>
   );
 };

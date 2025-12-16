@@ -4,14 +4,7 @@ import { ArrowRight } from 'lucide-react';
 export default function DanceAcademyCTA() {
   return (
     <div className="relative w-full overflow-hidden">
-      <style>{`
-        @theme {
-          --color-primary: #f6466c;
-          --color-secondary: #f28b00;
-          --color-elegantDark: #1a1a1a;
-          --color-elegantLight: #faf7f4;
-        }
-      `}</style>
+     
 
       <div 
         className="relative py-10 md:py-10 lg:py-10   px-6"
