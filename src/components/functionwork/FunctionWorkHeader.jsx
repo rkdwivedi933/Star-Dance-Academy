@@ -3,14 +3,7 @@ import { motion } from 'framer-motion';
 export default function FunctionWorkHeader() {
   return (
     <div className="relative w-full overflow-hidden">
-      <style>{`
-        @theme {
-          --color-primary: #f6466c;
-          --color-secondary: #f28b00;
-          --color-elegantDark: #1a1a1a;
-          --color-elegantLight: #faf7f4;
-        }
-      `}</style>
+     
       
       <div 
         className="relative py-24 px-6 md:py-32 lg:py-40"
@@ -26,9 +19,7 @@ export default function FunctionWorkHeader() {
           }} />
         </div>
 
-        {/* Elegant decorative elements */}
-        <div className="absolute top-10 left-10 w-20 h-20 md:w-32 md:h-32 rounded-full border-2 border-white/20" />
-        <div className="absolute bottom-10 right-10 w-24 h-24 md:w-40 md:h-40 rounded-full border-2 border-white/20" />
+       
 
         {/* Content */}
         <div className="relative max-w-7xl mx-auto text-center">

@@ -3,14 +3,7 @@ import { motion } from 'framer-motion';
 export default function FunctionChoreographyInfo() {
   return (
     <div className="relative w-full py-10 md:py-10 lg:py-28 px-6" style={{ backgroundColor: 'var(--color-elegantLight)' }}>
-      <style>{`
-        @theme {
-          --color-primary: #f6466c;
-          --color-secondary: #f28b00;
-          --color-elegantDark: #1a1a1a;
-          --color-elegantLight: #faf7f4;
-        }
-      `}</style>
+     
 
       <div className="max-w-7xl mx-auto">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
@@ -98,7 +91,7 @@ export default function FunctionChoreographyInfo() {
             transition={{ duration: 0.8, ease: [0.33, 1, 0.68, 1] }}
             className="relative"
           >
-            <div className="relative rounded-2xl overflow-hidden shadow-2xl">
+            <div className="relative rounded-2xl overflow-hidden ">
              
               
               {/* Placeholder image - replace with actual image */}

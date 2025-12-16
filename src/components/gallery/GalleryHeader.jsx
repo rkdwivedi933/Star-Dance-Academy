@@ -10,14 +10,7 @@ export default function GalleryHeader() {
         background: 'linear-gradient(135deg, var(--color-primary), var(--color-secondary))'
       }}
     >
-      <style>{`
-        @theme {
-          --color-primary: #f6466c;
-          --color-secondary: #f28b00;
-          --color-elegantDark: #1a1a1a;
-          --color-elegantLight: #faf7f4;
-        }
-      `}</style>
+     
  <div className="absolute inset-0 opacity-10">
           <div className="absolute inset-0" style={{
             backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='1'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`,
@@ -33,30 +26,16 @@ export default function GalleryHeader() {
       </div>
 
       {/* Content Container */}
-      <div className="relative z-10 max-w-5xl mx-auto text-center">
+      <div className="relative z-10 max-w-5xl mx-auto text-center mb-14">
         {/* Icon */}
-        <motion.div
-          initial={{ scale: 0, rotate: -180 }}
-          animate={{ scale: 1, rotate: 0 }}
-          transition={{ 
-            type: "spring", 
-            stiffness: 200, 
-            damping: 20,
-            duration: 0.8 
-          }}
-          className="inline-block mb-8"
-        >
-          <div className="w-20 h-20 md:w-24 md:h-24 rounded-full bg-white/20 backdrop-blur-sm flex items-center justify-center mx-auto border-2 border-white/30">
-            <Sparkles className="w-10 h-10 md:w-12 md:h-12 text-white" />
-          </div>
-        </motion.div>
+        
 
         {/* Main Title */}
         <motion.h1
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.2, duration: 0.8, ease: "easeOut" }}
-          className="text-5xl md:text-6xl lg:text-7xl font-bold text-white mb-4 leading-tight"
+          className="text-5xl md:text-6xl lg:text-7xl font-bold text-white mb-4 leading-tight lg:mt-32"
           style={{
             textShadow: '0 4px 20px rgba(0, 0, 0, 0.3)'
           }}

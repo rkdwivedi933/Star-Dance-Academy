@@ -8,7 +8,7 @@ const MainGallery = () => {
   const galleryImages = [
     {
       id: 1,
-      url: 'https://images.unsplash.com/photo-1519741497674-611481863552?w=1600&q=90',
+      url: 'https://images.unsplash.com/photo-1635164055506-0b7d67505d64?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8Y3VwcGxlJTIwZGFuY2V8ZW58MHx8MHx8fDA%3D',
       category: 'Venues',
       span: 'md:col-span-2 md:row-span-2'
     },
@@ -96,7 +96,7 @@ const MainGallery = () => {
         variants={containerVariants}
         initial="hidden"
         animate={isInView ? "visible" : "hidden"}
-        className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3 md:gap-4 auto-rows-[180px] md:auto-rows-[220px]"
+        className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-3 md:gap-4 auto-rows-[180px] md:auto-rows-[220px] "
       >
         {galleryImages.map((image, index) => (
           <motion.div
@@ -113,7 +113,7 @@ const MainGallery = () => {
             <img
               src={image.url}
               alt={image.category}
-              className="w-full h-full object-cover transition-all duration-700 group-hover:scale-110 group-hover:brightness-75"
+              className="w-full h-full  object-cover transition-all duration-700 group-hover:scale-110 group-hover:brightness-75"
               loading="lazy"
             />
 
@@ -158,17 +158,7 @@ const MainGallery = () => {
 
   return (
     <section className="relative py-10 md:py-10 lg:py-32 px-4 md:px-8 lg:px-16 overflow-hidden bg-elegantLight">
-      <style>{`
-        @theme {
-          --color-primary: #f6466c;
-          --color-secondary: #f28b00;
-          --color-elegantDark: #1a1a1a;
-          --color-elegantLight: #faf7f4;
-        }
-        .bg-elegantLight { background-color: var(--color-elegantLight); }
-        .from-primary/20 { --tw-gradient-from: rgba(246, 70, 108, 0.2); }
-        .to-secondary/20 { --tw-gradient-to: rgba(242, 139, 0, 0.2); }
-      `}</style>
+     
 
       {/* Background decoration */}
       <div className="absolute top-0 right-0 w-96 h-96 rounded-full blur-3xl opacity-10" style={{ background: 'radial-gradient(circle, var(--color-primary) 0%, transparent 70%)' }} />

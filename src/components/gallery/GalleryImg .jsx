@@ -77,7 +77,7 @@ const GalleryImage = ({ image, index }) => {
         >
           <video
             src={image.url}
-            autoPlay
+            
             loop
             muted
             playsInline
@@ -119,7 +119,7 @@ const GalleryImg = () => {
     id: 1,
     url: "https://www.pexels.com/download/video/7975413.mp4",
     category: "Dance Academy",
-    span: "md:col-span-1 md:row-span-2"
+    span: "md:col-span-1 md:row-span-1"
   },
   {
     id: 2,
@@ -137,11 +137,17 @@ const GalleryImg = () => {
     id: 4,
     url: "https://www.pexels.com/download/video/8503574.mp4",
     category: "Dance Show",
-    span: "md:col-span-1 md:row-span-2"
+    span: "md:col-span-1 md:row-span-1"
   },
   {
     id: 5,
     url: "https://www.pexels.com/download/video/3873059.mp4",
+    category: "Stage Performance",
+    span: "md:col-span-2 md:row-span-1"
+  },
+   {
+    id: 6,
+    url: "https://www.pexels.com/download/video/8503574.mp4",
     category: "Stage Performance",
     span: "md:col-span-2 md:row-span-1"
   }
@@ -159,7 +165,7 @@ const itemVariants = {
   };
 
   return (
-    <section className="relative py-10 px-4 bg-elegantLight">
+    <section className="relative py-10 px-4 lg:px-25 bg-elegantLight">
       <div >
          <div className="max-w-7xl mx-auto relative z-10">
         <motion.div initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }} className="text-center mb-16 md:mb-20">
@@ -189,7 +195,7 @@ const itemVariants = {
         
       </div>
         
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 auto-rows-[220px]">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-4 auto-rows-[180px] ">
           {galleryImages.map((image, index) => (
             <GalleryImage key={image.id} image={image} index={index} />
             
