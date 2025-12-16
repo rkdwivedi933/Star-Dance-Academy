@@ -1,11 +1,11 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Sparkles } from 'lucide-react';
+
 
 export default function GalleryHeader() {
   return (
     <div 
-      className="relative w-full py-10 md:py-10 lg:py-26 px-6 overflow-hidden "
+      className="relative w-full py-10 md:py-26 lg:py-26 px-6 overflow-hidden "
       style={{
         background: 'linear-gradient(135deg, var(--color-primary), var(--color-secondary))'
       }}

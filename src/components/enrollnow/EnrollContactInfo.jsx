@@ -77,9 +77,11 @@ export default function EnrollContactInfo() {
         </motion.div>
 
         {/* Contact Info Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8 mb-16 "
+        <div className="grid grid-cols-1 lg:grid-cols-3 md:grid-cols-1 md:w-full gap-6 sm:gap-8 mb-16 "
         
         >
+          
+
           {/* Phone Number Card */}
           <ContactCard 
             icon={PhoneCall} 
@@ -91,7 +93,7 @@ export default function EnrollContactInfo() {
               href={`tel:${phoneNumber}`}
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.98 }}
-              className="text-2xl sm:text-3xl font-bold text-primary hover:text-[#e03558] transition-colors inline-block "
+              className="text-2xl sm:text-3xl font-bold  text-primary hover:text-[#e03558] transition-colors inline-block "
             >
               {phoneNumber}
             </motion.a>
@@ -99,6 +101,7 @@ export default function EnrollContactInfo() {
               Mon - Sat: 9:00 AM - 8:00 PM
             </p>
           </ContactCard>
+          
 
           {/* WhatsApp Card */}
           <ContactCard 

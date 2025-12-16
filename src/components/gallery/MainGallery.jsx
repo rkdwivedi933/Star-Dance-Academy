@@ -96,13 +96,13 @@ const MainGallery = () => {
         variants={containerVariants}
         initial="hidden"
         animate={isInView ? "visible" : "hidden"}
-        className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-3 md:gap-4 auto-rows-[180px] md:auto-rows-[220px] "
+        className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-3 md:gap-4 auto-rows-[180px] md:auto-rows-[220px] shrink "
       >
         {galleryImages.map((image, index) => (
           <motion.div
             key={image.id}
             variants={itemVariants}
-            className={`${image.span} relative overflow-hidden rounded-2xl group cursor-pointer`}
+            className={`${image.span} relative overflow-hidden rounded-2xl group cursor-pointer `}
             style={{ boxShadow: '0 8px 32px rgba(246, 70, 108, 0.08)', border: '1px solid rgba(246, 70, 108, 0.12)' }}
             onHoverStart={() => setHoveredId(image.id)}
             onHoverEnd={() => setHoveredId(null)}

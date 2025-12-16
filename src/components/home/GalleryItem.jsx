@@ -31,7 +31,7 @@ const Lightbox = ({ image, onClose }) => {
         animate={{ scale: 1, opacity: 1 }}
         exit={{ scale: 0.8, opacity: 0 }}
         transition={{ type: "spring", damping: 25 }}
-        className="relative max-w-6xl max-h-[90vh]"
+        className="relative max-w-6xl max-h-[90vh] md:max-h[40vh] mb-32"
         onClick={(e) => e.stopPropagation()}
       >
         <img
@@ -247,16 +247,17 @@ const GalleryPreview = () => {
       </div>
 
       {/* Tablet Layout - 3 columns */}
-      <div className="hidden md:grid lg:hidden grid-cols-3 gap-4 max-w-5xl mx-auto">
-        {galleryImages.map((image) => (
-          <GalleryItem
-            key={image.id}
-            image={image}
-            onClick={setSelectedImage}
-            className="aspect-square"
-          />
-        ))}
-      </div>
+     <div className="hidden md:grid lg:hidden grid-cols-2 gap-4 max-w-5xl mx-auto auto-rows-fr">
+  {galleryImages.map((image) => (
+    <GalleryItem
+      key={image.id}
+      image={image}
+      onClick={setSelectedImage}
+      className="w-full h-full aspect-4/2"
+    />
+  ))}
+</div>
+
 
  {/* Mobile Layout - single column */}
 <div className="grid md:hidden grid-cols-1 gap-3 max-w-2xl mx-auto">

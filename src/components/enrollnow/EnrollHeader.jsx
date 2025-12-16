@@ -119,16 +119,17 @@ export default function EnrollHeader() {
           </div>
 
           {/* Bottom Wave Decoration */}
-          <div className="absolute bottom-0 left-0 right-0">
-            <svg
-              className="w-full h-12 sm:h-16 text-rose-50"
-              preserveAspectRatio="none"
-              viewBox="0 0 1440 54"
-              fill="currentColor"
-            >
-              <path d="M0,32L60,37.3C120,43,240,53,360,48C480,43,600,21,720,16C840,11,960,21,1080,26.7C1200,32,1320,32,1380,32L1440,32L1440,54L1380,54C1320,54,1200,54,1080,54C960,54,840,54,720,54C600,54,480,54,360,54C240,54,120,54,60,54L0,54Z" />
-            </svg>
-          </div>
+          <div className="absolute -bottom-px left-0 right-0 overflow-hidden">
+  <svg
+    className="block w-full h-12 sm:h-16 text-rose-50"
+    preserveAspectRatio="none"
+    viewBox="0 0 1440 54"
+    fill="currentColor"
+  >
+    <path d="M0,32L60,37.3C120,43,240,53,360,48C480,43,600,21,720,16C840,11,960,21,1080,26.7C1200,32,1320,32,1380,32L1440,32L1440,54L1380,54C1320,54,1200,54,1080,54C960,54,840,54,720,54C600,54,480,54,360,54C240,54,120,54,60,54L0,54Z" />
+  </svg>
+</div>
+
         </div>
       </motion.div>
 
