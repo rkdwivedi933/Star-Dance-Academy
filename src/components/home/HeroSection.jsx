@@ -96,7 +96,7 @@ const DanceAcademyHero = () => {
             </p>
 
             <div
-              className="flex  items-center gap-4 opacity-0  animate-fadeInUp"
+              className="flex flex-wrap  items-center gap-4 opacity-0  animate-fadeInUp"
               style={{ animationDelay: "0.8s", animationFillMode: "forwards" }}
             >
               <button
