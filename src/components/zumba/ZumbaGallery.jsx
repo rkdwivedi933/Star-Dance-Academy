@@ -72,18 +72,32 @@ const GalleryImage = ({ image, index }) => {
       >
         {/* VIDEO */}
         <motion.div
-          className="relative w-full h-full overflow-hidden"
-          animate={{ scale: isHovered ? 1.15 : 1 }}
-        >
-          <video
-            src={image.url}
-            
-            loop
-            muted
-            playsInline
-            className="w-full h-full object-cover"
-          />
-        </motion.div>
+  className="relative w-full h-full overflow-hidden"
+  animate={{ scale: isHovered ? 1.15 : 1 }}
+>
+  {/* VIDEO */}
+  <video
+    src={image.url}
+    loop
+    muted
+    playsInline
+    className="w-full h-full object-cover"
+  />
+
+  {/* DARK OVERLAY (optional) */}
+  <div className="absolute inset-0 bg-black/30" />
+
+  {/* PLAY ICON */}
+  <motion.div
+    className="absolute inset-0 flex items-center justify-center pointer-events-none"
+    initial={{ scale: 0.9, opacity: 0.8 }}
+    whileHover={{ scale: 1 }}
+  >
+    <div className="w-16 h-16 bg-primary rounded-full flex items-center justify-center shadow-xl">
+      <Play className="w-7 h-7 text-white ml-1" />
+    </div>
+  </motion.div>
+</motion.div>
 
         {/* Overlay */}
         <motion.div
@@ -92,19 +106,7 @@ const GalleryImage = ({ image, index }) => {
           animate={{ opacity: isHovered ? 1 : 0 }}
         />
 
-        {/* Center Actions */}
-        <motion.div
-          className="absolute inset-0 flex items-center justify-center"
-          initial={{ opacity: 0 }}
-          animate={{ opacity: isHovered ? 1 : 0 }}
-        >
-          <div className="flex gap-3">
-            <button className="p-3 bg-primary text-white rounded-full">
-              <Play />
-            </button>
-           
-          </div>
-        </motion.div>
+      
       </motion.div>
 
       {open && <VideoLightbox video={image.url} onClose={() => setOpen(false)} />}

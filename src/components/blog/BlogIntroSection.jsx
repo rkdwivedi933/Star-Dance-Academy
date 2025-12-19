@@ -170,7 +170,7 @@ export default function BlogIntroSection() {
         >
           {/* Headline */}
           <h1 className="text-4xl md:text-6xl  font-bold leading-tight mb-4">
-            <span style={{ color: 'var(--color-elegantDark)' }}>
+            <span >
               Your Dance <span className='text-primary'>Journey</span>
             </span>
 
@@ -188,7 +188,7 @@ export default function BlogIntroSection() {
           >
             <p 
               className="text-xl md:text-2xl lg:text-3xl leading-relaxed font-light mb-8"
-              style={{ color: 'var(--color-elegantDark)', opacity: 0.9 }}
+              
             >
               Welcome to our dance community hub, where we share the latest{' '}
               <span 

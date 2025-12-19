@@ -104,15 +104,25 @@ export default function DanceClassesSection() {
                               }}
                             />
           <motion.div
-            initial={{ scale: 0 }}
-            whileInView={{ scale: 1 }}
-            transition={{ type: "spring", stiffness: 120 }}
-            className="inline-flex items-center gap-2 px-6 py-3 rounded-full mb-6 bg-white/70 backdrop-blur border"
+            initial={{ opacity: 0, scale: 0.9 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.4 }}
+            className="inline-flex items-center gap-2 px-4 py-2 rounded-full border shadow-md mb-4"
+            style={{
+              background:
+                'linear-gradient(135deg, rgba(246,70,108,0.1), rgba(242,139,0,0.1))',
+              borderColor: 'var(--color-primary)',
+            }}
           >
-            <HeartHandshake size={18} className="text-primary" />
-            <span className="font-semibold">Classes</span>
+            <HeartHandshake size={16} style={{ color: 'var(--color-primary)' }} />
+            <span
+              className="text-sm font-semibold"
+              style={{ color: 'var(--color-elegantDark)' }}
+            >
+              Classes
+            </span>
           </motion.div>
-
           <h2 className="text-4xl md:text-6xl font-bold text-elegantDark mb-4">
             Classes <span className="text-primary">Offered</span>
           </h2>

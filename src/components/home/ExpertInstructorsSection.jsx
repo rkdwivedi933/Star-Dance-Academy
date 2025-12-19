@@ -42,35 +42,29 @@ const ExpertInstructorCard = ({
   };
 
   return (
-  <motion.div
-  ref={cardRef}
-  initial={{
-    opacity: 0,
-    scale: 0.65,
-  }}
-  whileInView={{
-    opacity: 1,
-    scale: 1,
-  }}
-  viewport={{ once: true, amount: 0.35 }}
-  transition={{
-    type: "spring",
-    stiffness: 40,   // 👈 kam = smooth
-    damping: 10,     // 👈 zyada = no jhatka
-    mass: 1.2,       // 👈 thoda heavy feel
-  }}
-  whileHover={{ y: -6 }}
-  className="
-  bg-white rounded-xl overflow-hidden shadow-sm 
-  hover:shadow-xl transition-all duration-300
-  w-full max-w-[380px]
-"
-
->
-
-
+    <motion.div
+      ref={cardRef}
+      initial={{ opacity: 0, scale: 0.65 }}
+      whileInView={{ opacity: 1, scale: 1 }}
+      viewport={{ once: true, amount: 0.35 }}
+      transition={{
+        type: "spring",
+        stiffness: 40,
+        damping: 10,
+        mass: 1.2,
+      }}
+      whileHover={{ y: -6 }}
+      className="
+        bg-white rounded-xl overflow-hidden
+        w-full max-w-[340px] sm:max-w-[360px] lg:max-w-[380px]
+        mx-auto
+        px-6 sm:px-8 lg:px-0
+        shadow-sm hover:shadow-xl
+        transition-all duration-300
+      "
+    >
       {/* IMAGE */}
-      <div className="h-[250px] overflow-hidden">
+      <div className="h-[220px] sm:h-[240px] lg:h-[250px] overflow-hidden">
         <img
           src={image}
           alt={name}
@@ -79,10 +73,8 @@ const ExpertInstructorCard = ({
       </div>
 
       {/* CONTENT */}
-      <div className="p-6">
-        <h3 className="text-xl font-bold mb-2 transition">
-          {name}
-        </h3>
+      <div className="p-5 sm:p-6">
+        <h3 className="text-lg sm:text-xl font-bold mb-2">{name}</h3>
         <p className="text-gray-600 text-sm mb-4">{role}</p>
 
         {/* SOCIAL */}
@@ -125,10 +117,17 @@ const ExpertInstructorCard = ({
         {/* BUTTON */}
         <button
           onClick={handleToggle}
-          className="mt-6 w-full  hover:bg-primary text-white py-3 rounded flex items-center justify-center gap-2 uppercase text-sm tracking-wide transition"
+          className="
+            mt-6 w-full
+            hover:bg-primary text-white
+            py-3 rounded
+            flex items-center justify-center gap-2
+            uppercase text-xs sm:text-sm tracking-wide
+            transition
+          "
           style={{
-    background: `linear-gradient(135deg, var(--color-primary) 0%, var(--color-secondary) 100%)`,
-  }}
+            background: `linear-gradient(135deg, var(--color-primary) 0%, var(--color-secondary) 100%)`,
+          }}
         >
           {isExpanded ? "Close" : "Expand"}
           {isExpanded ? <ChevronUp size={18} /> : <ChevronDown size={18} />}
@@ -144,7 +143,7 @@ const ExpertInstructorsSection = () => {
   const instructors = [
     {
       image:
-        "https://images.unsplash.com/photo-1623813754430-44650fd2a905?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1yZWxhdGVkfDEzfHx8ZW58MHx8fHx8",
+        "https://images.unsplash.com/photo-1623813754430-44650fd2a905?w=600&auto=format&fit=crop&q=60",
       name: "Isabella Martinez",
       role: "Principal Ballet Instructor",
       shortBio:
@@ -159,7 +158,7 @@ const ExpertInstructorsSection = () => {
     },
     {
       image:
-        "https://images.unsplash.com/photo-1603415526960-f7e0328c63b1?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "https://images.unsplash.com/photo-1603415526960-f7e0328c63b1?q=80&w=1170",
       name: "Marcus Chen",
       role: "Contemporary Director",
       shortBio:
@@ -172,14 +171,12 @@ const ExpertInstructorsSection = () => {
         youtube: "#",
       },
     },
-  
     {
       image:
-        "https://images.unsplash.com/photo-1688888745596-da40843a8d45?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTl8fHByb2ZpbGUlMjBwaWN0dXJlfGVufDB8fDB8fHww",
+        "https://images.unsplash.com/photo-1688888745596-da40843a8d45?w=600&auto=format&fit=crop&q=60",
       name: "David Thompson",
       role: "Hip Hop Instructor",
-      shortBio:
-        "International hip hop champion & street dance pioneer.",
+      shortBio: "International hip hop champion & street dance pioneer.",
       fullBio:
         "Winner of multiple world championships and collaborator with top music artists.",
       socialLinks: {
@@ -191,10 +188,10 @@ const ExpertInstructorsSection = () => {
   ];
 
   return (
-    <section className="py-20 px-12 ">
-      <div className="max-w-7xl mx-auto">
+    <section className="py-20 sm:py-20">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6">
         {/* HEADER */}
-        <div className="text-center mb-16">
+        <div className="text-center mb-12 sm:mb-16">
           <motion.div
             initial={{ scaleX: 0 }}
             whileInView={{ scaleX: 1 }}
@@ -220,28 +217,29 @@ const ExpertInstructorsSection = () => {
             }}
           >
             <AwardIcon size={18} style={{ color: "var(--color-primary)" }} />
-            <span className="text-sm font-semibold">
-              Instructors
-            </span>
+            <span className="text-sm font-semibold">Instructors</span>
           </motion.div>
 
-          <h2 className="text-4xl md:text-6xl font-bold mb-4">
+          <h2 className="text-4xl  md:text-6xl font-bold mb-4">
             Expert <span className="text-primary">Instructors</span>
           </h2>
 
-          <p className="text-gray-600 text-lg max-w-2xl mx-auto">
-            Learn from world-class professionals shaping the next generation of dancers.
+          <p className="text-gray-600 text-base sm:text-lg max-w-2xl mx-auto">
+            Learn from world-class professionals shaping the next generation of
+            dancers.
           </p>
         </div>
 
         {/* GRID */}
-     <div
-  className="
-    grid gap-8 items-start justify-center
-    grid-cols-[repeat(auto-fit,minmax(400px,1fr))]
-  "
->
-
+        <div
+          className="
+            grid gap-8
+            grid-cols-1
+            sm:grid-cols-2
+            lg:grid-cols-3
+            justify-items-center
+          "
+        >
           {instructors.map((item, index) => (
             <ExpertInstructorCard key={index} {...item} index={index} />
           ))}

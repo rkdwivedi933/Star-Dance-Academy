@@ -308,11 +308,8 @@ const AwardsSection = () => {
           <h2 className="text-4xl md:text-6xl font-bold text-gray-900 mb-6 leading-tight">
             Awards &{" "}
             <span
-              className="bg-clip-text text-transparent"
-              style={{
-                backgroundImage:
-                  "linear-gradient(135deg, var(--color-primary), var(--color-secondary))",
-              }}
+              className="  text-primary"
+              
             >
               Recognition
             </span>
