@@ -1,10 +1,8 @@
+import { motion } from "framer-motion";
+import { PhoneCall, MessageCircle, MapPin, Phone } from "lucide-react";
 
-import { motion } from 'framer-motion';
-import { PhoneCall, MessageCircle, MapPin, Phone } from 'lucide-react';
-import EnrollForm from './EnrollForm';
-import GoogleMapSection from './GoogleMapSection';
-import OpeningHoursSection from './OpeningHoursSection';
-import SocialMediaSection from './SocialMediaSection';
+import OpeningHoursSection from "./OpeningHoursSection";
+
 
 const ContactCard = ({ icon: Icon, title, children, delay }) => {
   return (
@@ -22,17 +20,18 @@ const ContactCard = ({ icon: Icon, title, children, delay }) => {
           className="mb-4 sm:mb-6"
         >
           <div className="w-16 h-16 sm:w-20 sm:h-20 bg-linear-to-br from-primary to-secondary rounded-full flex items-center justify-center shadow-lg">
-            <Icon className="w-8 h-8 sm:w-10 sm:h-10 text-white" strokeWidth={2} />
+            <Icon
+              className="w-8 h-8 sm:w-10 sm:h-10 text-white"
+              strokeWidth={2}
+            />
           </div>
         </motion.div>
-        
+
         <h3 className="text-xl sm:text-2xl font-bold text-gray-900 mb-3 sm:mb-4">
           {title}
         </h3>
-        
-        <div className="w-full">
-          {children}
-        </div>
+
+        <div className="w-full">{children}</div>
       </div>
     </motion.div>
   );
@@ -43,7 +42,7 @@ export default function EnrollContactInfo() {
   const whatsappNumber = "919876543210";
 
   return (
-    <div className="min-h-full bg-linear-to-br bg-elegantLight/90 py-10 sm:py-10 md:py-10 px-4 sm:px-6 lg:px-8">
+    <div className="min-h-full bg-linear-to-br bg-white py-20 sm:py-20 md:py-20 px-4 sm:px-6 lg:px-8">
       <div className="max-w-7xl mx-auto">
         {/* Section Header */}
         <motion.div
@@ -52,23 +51,37 @@ export default function EnrollContactInfo() {
           transition={{ duration: 0.6 }}
           className="text-center mb-12 sm:mb-16"
         >
+           <motion.div
+                  initial={{ scaleX: 0 }}
+                  whileInView={{ scaleX: 1 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.8, delay: 0.2 }}
+                  className="w-20 h-1 mx-auto mb-4 rounded-full"
+                  style={{
+                    background: `linear-gradient(90deg, var(--color-primary), var(--color-secondary))`,
+                  }}
+                />
           <motion.div
-                initial={{ opacity: 0, scale: 0.9 }}
-                whileInView={{ opacity: 1, scale: 1 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5 }}
-                className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full shadow-lg border mb-5"
-                style={{ 
-                  background: 'linear-gradient(135deg, rgba(246, 70, 108, 0.1), rgba(242, 139, 0, 0.1))',
-                  borderColor: 'var(--color-primary)'
-                }}
-              >
-                <Phone size={18} style={{ color: 'var(--color-primary)' }} />
-                <span className="text-sm font-semibold" style={{ color: 'var(--color-elegantDark)' }}>
-                  Contact
-                </span>
-              </motion.div>
-          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-gray-900 mb-4">
+            initial={{ opacity: 0, scale: 0.9 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5 }}
+            className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full shadow-lg border mb-5"
+            style={{
+              background:
+                "linear-gradient(135deg, rgba(246, 70, 108, 0.1), rgba(242, 139, 0, 0.1))",
+              borderColor: "var(--color-primary)",
+            }}
+          >
+            <Phone size={18} style={{ color: "var(--color-primary)" }} />
+            <span
+              className="text-sm font-semibold"
+              style={{ color: "var(--color-elegantDark)" }}
+            >
+              Contact
+            </span>
+          </motion.div>
+          <h1 className="text-4xl sm:text-4xl lg:text-6xl font-bold text-gray-900 mb-4">
             Get in <span className="text-primary">Touch</span>
           </h1>
           <p className="text-gray-600 text-lg sm:text-xl max-w-2xl mx-auto">
@@ -77,18 +90,9 @@ export default function EnrollContactInfo() {
         </motion.div>
 
         {/* Contact Info Grid */}
-        <div className="grid grid-cols-1 lg:grid-cols-3 md:grid-cols-1 md:w-full gap-6 sm:gap-8 mb-16 "
-        
-        >
-          
-
+        <div className="grid grid-cols-1 lg:grid-cols-3 md:grid-cols-1 md:w-full gap-6 sm:gap-8 mb-16 ">
           {/* Phone Number Card */}
-          <ContactCard 
-            icon={PhoneCall} 
-            title="Call Us" 
-            delay={0.2}
-            
-          >
+          <ContactCard icon={PhoneCall} title="Call Us" delay={0.2}>
             <motion.a
               href={`tel:${phoneNumber}`}
               whileHover={{ scale: 1.05 }}
@@ -101,21 +105,16 @@ export default function EnrollContactInfo() {
               Mon - Sat: 9:00 AM - 8:00 PM
             </p>
           </ContactCard>
-          
 
           {/* WhatsApp Card */}
-          <ContactCard 
-            icon={MessageCircle} 
-            title="WhatsApp" 
-            delay={0.4}
-          >
+          <ContactCard icon={MessageCircle} title="WhatsApp" delay={0.4}>
             <motion.a
               href={`https://wa.me/${whatsappNumber}`}
               target="_blank"
               rel="noopener noreferrer"
-              whileHover={{ 
+              whileHover={{
                 scale: 1.05,
-                boxShadow: "0 10px 30px rgba(242, 139, 0, 0.4)"
+                boxShadow: "0 10px 30px rgba(242, 139, 0, 0.4)",
               }}
               whileTap={{ scale: 0.98 }}
               className="inline-flex items-center gap-3 bg-linear-to-r from-primary to-secondary text-white px-6 sm:px-8 py-3 sm:py-4 rounded-full font-semibold text-base sm:text-lg shadow-lg hover:shadow-xl transition-all duration-300"
@@ -129,11 +128,7 @@ export default function EnrollContactInfo() {
           </ContactCard>
 
           {/* Address Card */}
-          <ContactCard 
-            icon={MapPin} 
-            title="Visit Us" 
-            delay={0.6}
-          >
+          <ContactCard icon={MapPin} title="Visit Us" delay={0.6}>
             <div className="text-gray-700 text-base sm:text-lg leading-relaxed">
               <p className="font-semibold mb-1">Dance Studio Academy</p>
               <p>123 Rhythm Street, Dance Plaza</p>
@@ -151,14 +146,11 @@ export default function EnrollContactInfo() {
             </motion.a>
           </ContactCard>
         </div>
-<div>
-  <OpeningHoursSection/>
-  <EnrollForm/>
-  <GoogleMapSection/>
-  <SocialMediaSection/>
+        <div>
+          <OpeningHoursSection />
 
-</div>
-        
+          
+        </div>
       </div>
     </div>
   );

@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import {Sparkles } from 'lucide-react';
+
 
 const WhatIsZumba = () => {
   const fadeLeft = {
@@ -18,7 +18,7 @@ const WhatIsZumba = () => {
   };
 
   return (
-    <section className="py-10 md:py-10 px-4 md:px-8 bg-elegantLight">
+    <section className="py-20 md:py-20 px-4 md:px-8 bg-white">
      
 
       <div className="max-w-7xl mx-auto">

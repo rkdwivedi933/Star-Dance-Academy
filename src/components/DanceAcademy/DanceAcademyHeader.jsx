@@ -1,97 +1,87 @@
-import { motion } from 'framer-motion';
+import  { useState, useEffect } from 'react';
 
-export default function DanceAcademyHeader() {
+
+export default function AboutHeroSection() {
+  const [scrollY, setScrollY] = useState(0);
+
+  useEffect(() => {
+    const handleScroll = () => setScrollY(window.scrollY);
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
   return (
-    <div className="relative w-full overflow-hidden">
+    <div className="relative w-full min-h-screen overflow-hidden bg-black">
       <style>{`
-        @theme {
-          --color-primary: #f6466c;
-          --color-secondary: #f28b00;
-          --color-elegantDark: #1a1a1a;
-          --color-elegantLight: #faf7f4;
+        @keyframes fadeInUp {
+          from { opacity: 0; transform: translateY(40px); }
+          to { opacity: 1; transform: translateY(0); }
         }
+        @keyframes fadeIn {
+          from { opacity: 0; }
+          to { opacity: 1; }
+        }
+        @keyframes float {
+          0%,100% { transform: translateY(0px) rotate(0deg); }
+          50% { transform: translateY(-20px) rotate(5deg); }
+        }
+        @keyframes glow {
+          0%,100% { opacity: 0.5; filter: blur(20px); }
+          50% { opacity: 0.8; filter: blur(30px); }
+        }
+        .animate-fadeInUp { animation: fadeInUp 1s ease-out forwards; }
+        .animate-fadeIn { animation: fadeIn 1.2s ease-out forwards; }
+        .animate-float { animation: float 6s ease-in-out infinite; }
+        .animate-glow { animation: glow 4s ease-in-out infinite; }
       `}</style>
-      
-      <div 
-        className="relative py-24 px-6 md:py-32 lg:py-40"
+
+      {/* Background */}
+      <div
+        className="absolute inset-0 bg-cover bg-center transition-transform duration-300"
         style={{
-          background: `linear-gradient(135deg, var(--color-primary) 0%, var(--color-secondary) 100%)`
+          backgroundImage:
+            "url('https://images.unsplash.com/photo-1495791185843-c73f2269f669?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8ZGFuY2VyfGVufDB8fDB8fHww')",
+          transform: `translateY(${scrollY * 0.5}px)`
         }}
       >
-        {/* Decorative pattern overlay */}
-        <div className="absolute inset-0 opacity-10">
-          <div className="absolute inset-0" style={{
-            backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='1'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`,
-            backgroundSize: '60px 60px'
-          }} />
-        </div>
-
-        {/* Floating decorative elements */}
-        <div className="absolute top-16 left-10 w-24 h-24 md:w-32 md:h-32 rounded-full border-2 border-white/20 opacity-50" />
-        <div className="absolute bottom-16 right-10 w-32 h-32 md:w-40 md:h-40 rounded-full border-2 border-white/20 opacity-40" />
-        <div className="absolute top-1/2 left-1/4 w-16 h-16 md:w-24 md:h-24 rounded-full bg-white/10 blur-2xl" />
-
-        {/* Content */}
-        <div className="relative max-w-7xl mx-auto text-center">
-          
-          {/* Top decorative line */}
-          <motion.div
-            initial={{ scaleX: 0 }}
-            animate={{ scaleX: 1 }}
-            transition={{ duration: 0.8, ease: "easeOut" }}
-            className="w-20 md:w-24 h-1 bg-white/80 rounded-full mx-auto mb-8 md:mb-10"
-          />
-
-          {/* Main heading */}
-          <motion.h1
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, ease: [0.33, 1, 0.68, 1] }}
-            className="text-4xl md:text-6xl lg:text-7xl font-bold text-white mb-6 md:mb-8 tracking-tight leading-tight"
-          >
-            Dance Academy
-          </motion.h1>
-          
-          {/* Subtitle with separators */}
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.2, ease: [0.33, 1, 0.68, 1] }}
-            className="flex flex-wrap items-center justify-center gap-3 md:gap-4 text-lg md:text-xl lg:text-2xl text-white/95 font-light"
-          >
-            <span className="tracking-wide">Learn</span>
-            <span className="w-1.5 h-1.5 rounded-full bg-white/70" />
-            <span className="tracking-wide">Express</span>
-            <span className="w-1.5 h-1.5 rounded-full bg-white/70" />
-            <span className="tracking-wide">Shine</span>
-          </motion.div>
-
-          {/* Bottom decorative element */}
-          <motion.div
-            initial={{ scaleX: 0 }}
-            animate={{ scaleX: 1 }}
-            transition={{ duration: 0.8, delay: 0.4, ease: "easeOut" }}
-            className="mt-10 md:mt-14 mx-auto w-24 md:w-32 h-1 bg-white/80 rounded-full"
-          />
-
-         
-        </div>
-
-       
-        {/* Bottom Wave Decoration */}
-      <div className="absolute bottom-0 left-0 right-0">
-        <svg
-          viewBox="0 0 1440 120"
-          className="w-full h-auto"
-          preserveAspectRatio="none"
-        >
-          <path
-            d="M0,64L80,69.3C160,75,320,85,480,80C640,75,800,53,960,48C1120,43,1280,53,1360,58.7L1440,64L1440,120L1360,120C1280,120,1120,120,960,120C800,120,640,120,480,120C320,120,160,120,80,120L0,120Z"
-            style={{ fill: "var(--color-elegantLight)" }}
-          />
-        </svg>
+        <div className="absolute inset-0 bg-linear-to-b from-black/40 via-black/60 to-black/90" />
+        <div className="absolute inset-0 bg-linear-to-r from-black/80 via-transparent to-black/40" />
       </div>
+
+
+      {/* Content */}
+      <div className="relative z-10 min-h-screen flex items-center justify-center">
+        <div className="max-w-5xl mx-auto px-6 md:px-12 py-20 w-full text-center">
+          <div className="space-y-8 flex flex-col items-center">
+
+            {/* Heading */}
+            <div className="opacity-0 animate-fadeInUp" style={{ animationDelay: '0.4s' }}>
+              <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold text-white leading-tight tracking-tight">
+             
+                <span className="block mt-2 text-transparent bg-clip-text bg-linear-to-r from-primary to-secondary">
+                  Passion Meets
+                </span>
+                <span className="block mt-2">Purpose</span>
+              </h1>
+            </div>
+
+            {/* Description */}
+            <div className="opacity-0 animate-fadeInUp" style={{ animationDelay: '0.6s' }}>
+              <p className="text-lg md:text-xl text-gray-300 leading-relaxed max-w-2xl mx-auto">
+              we are a community of artists,
+                dreamers, and performers. 
+              </p>
+            </div>
+
+            {/* CTA */}
+           
+
+          </div>
+        </div>
       </div>
+
+      {/* Bottom Line */}
+      <div className="absolute bottom-0 left-0 right-0 h-1 bg-linear-to-r from-transparent via-teal-500/50 to-transparent" />
     </div>
   );
 }

@@ -1,264 +1,218 @@
-
+import React, { useState, useEffect } from "react";
+import { Play, ArrowRight, Instagram, Facebook, Youtube } from "lucide-react";
+import CountUP from "../latout/CountUP";
 import { motion } from "framer-motion";
-import {  Sparkles } from "lucide-react";
-import vedio1 from "../../assets/herosection/vedio2.mp4";
 import { useNavigate } from "react-router-dom";
 
-const HeroSection = () => {
-  const containerVariants = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: {
-        staggerChildren: 0.2,
-        delayChildren: 0.3,
-      },
-    },
-  };
+import ZigZagText1 from "../latout/ZigZagText1";
+const images = [
+  "https://images.unsplash.com/photo-1508700929628-666bc8bd84ea?w=1920&q=90",
+  "https://images.unsplash.com/photo-1575140011062-adeaec7c6d95?w=1920&q=90",
+  "https://images.unsplash.com/photo-1547153760-18fc86324498?w=1920&q=90",
+  "https://images.unsplash.com/photo-1597368457044-fd0c441b3038?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1yZWxhdGVkfDU1fHx8ZW58MHx8fHx8",
+];
 
-  const itemVariants = {
-    hidden: { opacity: 0, y: 30 },
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: {
-        duration: 0.6,
-        ease: "easeOut",
-      },
-    },
-  };
+const DanceAcademyHero = () => {
+  const [isVideoHovered, setIsVideoHovered] = useState(false);
+  const [current, setCurrent] = useState(0);
 
-  const floatingAnimation = {
-    y: [0, -20, 0],
-    transition: {
-      duration: 4,
-      repeat: Infinity,
-      ease: "easeInOut",
-    },
-  };
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrent((prev) => (prev + 1) % images.length);
+    }, 5000);
+    return () => clearInterval(interval);
+  }, []);
 
-  const decorativeCircleFloat = {
-    y: [0, -15, 0],
-    x: [0, 10, 0],
-    transition: {
-      duration: 5,
-      repeat: Infinity,
-      ease: "easeInOut",
-    },
+  const navigate = useNavigate();
+  const handleEnrollButton = () => {
+    navigate("enroll-now");
   };
-const navigate = useNavigate();
-const handleEnroll = () =>{
-  navigate('/enroll-now')
-}
-
   return (
-  
-    <section
-  className="relative w-full min-h-screen flex items-center overflow-hidden "
-  style={{
-    backgroundImage: `
-      linear-gradient(
-        135deg,
-        rgba(246, 70, 108, 0.85),
-        rgba(242, 139, 0, 0.85)
-      ),
-      url("https://images.unsplash.com/photo-1547153760-18fc86324498?q=80&w=1920")
-    `,
-    backgroundSize: "cover",
-    backgroundPosition: "center",
-    backgroundRepeat: "no-repeat",
-  }}
+    <div
+  className="
+    relative
+    min-h-full sm:min-h-full
+    text-white
+    overflow-hidden
+    bg-black
+
+    px-4 sm:px-6 md:px-10 lg:px-16 xl:px-24
+    py-1   sm:py-12 md:py-16 lg:py-2
+  "
 >
 
-      {/* Decorative Background Elements */}
-      <motion.div
-        animate={{
-          scale: [1, 1.2, 1],
-          rotate: [0, 90, 0],
-          opacity: [0.1, 0.2, 0.1],
-        }}
-        transition={{
-          duration: 20,
-          repeat: Infinity,
-          ease: "linear",
-        }}
-        
-        style={{ background: "var(--color-elegantLight)" }}
-      />
-      <motion.div
-        animate={{
-          scale: [1, 1.3, 1],
-          rotate: [0, -90, 0],
-          opacity: [0.15, 0.25, 0.15],
-        }}
-        transition={{
-          duration: 15,
-          repeat: Infinity,
-          ease: "linear",
-        }}
-        className="absolute bottom-20 right-10 w-96 h-96 rounded-full blur-3xl"
-        style={{ background: "var(--color-elegantLight)" }}
-      />
+      {/* Background Slideshow */}
+     <div className="absolute inset-0">
+  {images.map((img, index) => (
+    <div
+      key={index}
+      className={`
+        absolute inset-0
+        bg-center bg-no-repeat mb-20 lg:mb-0
+        transition-opacity duration-1000
+        ${index === current ? "opacity-100" : "opacity-0"}
 
-      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 lg:py-10">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-18 lg:gap-16 items-center mb-24 ">
-          {/* LEFT COLUMN (ORDER FIRST ON MOBILE) */}
-          <motion.div
-            variants={containerVariants}
-            initial="hidden"
-            animate="visible"
-            className="text-white space-y-6 lg:space-y-8 z-10 order-1 lg:order-0  "
-          >
-            <motion.div
-              variants={itemVariants}
-              className="inline-flex items-center space-x-2 px-4 py-2  rounded-full bg-white/10 backdrop-blur-sm border border-white/20"
-            >
-              <Sparkles className="w-4 h-4" />
-              <span className="text-sm font-medium">Welcome to Star Dance</span>
-            </motion.div>
+        bg-contain sm:bg-cover 
+      `}
+      style={{ backgroundImage: `url('${img}')` }}
+    />
+  ))}
 
-            <motion.h1
-              variants={itemVariants}
-              className="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-bold leading-tight max-w-2xl"
-            >
-              Dance Your Way <br /> to Greatness{" "}
-            </motion.h1>
+  <div className="absolute inset-0  bg-linear-to-r from-black/90 via-black/70 to-black/50" />
+</div>
 
-            <motion.p
-              variants={itemVariants}
-              className="text-lg sm:text-xl text-white/90 leading-relaxed max-w-xl"
-            >
-              Discover the art of movement at Star Dance Academy. From classical
-              ballet to contemporary styles, unlock your potential with expert
-              instructors and a passionate community.
-            </motion.p>
 
-            <motion.div
-              variants={itemVariants}
-              className="flex flex-col sm:flex-row gap-4 pt-4"
+      {/* Decorative Elements */}
+
+      {/* Navigation */}
+      <nav className="relative z-10 flex items-center justify-between px-8 lg:px-16 py-1"></nav>
+
+      {/* Main Content */}
+      <div className="relative z-10 px-4  lg:px-16  flex flex-col justify-center min-h-[calc(100vh-120px)]">
+        <div className="max-w-7xl w-full ">
+          <div className="max-w-2xl ">
+            <div
+              className="mb-6 opacity-0 animate-fadeInUp"
+              style={{ animationDelay: "0.2s", animationFillMode: "forwards" }}
+            ></div>
+
+            <h1
+              className="text-5xl md:text-7xl lg:text-8xl font-bold mb-6 leading-tight opacity-0 animate-fadeInUp"
+              style={{ animationDelay: "0.4s", animationFillMode: "forwards" }}
             >
+              DANCE
+              <br />
+              <span className="text-transparent bg-clip-text bg-linear-to-r from-primary to-secondary">
+                ACADEMY
+              </span>
+            </h1>
+
+            <p
+              className="text-white text-lg md:text-xl mb-10 leading-relaxed max-w-xl opacity-0 animate-fadeInUp"
+              style={{ animationDelay: "0.6s", animationFillMode: "forwards" }}
+            >
+              From ballet to hip hop, modern to classical, we will help you
+              become your inner artist.
+            </p>
+
+            <div
+              className="flex  items-center gap-4 opacity-0  animate-fadeInUp"
+              style={{ animationDelay: "0.8s", animationFillMode: "forwards" }}
+            >
+              <button
+  onClick={() =>
+    window.open(
+      "https://www.youtube.com/watch?v=VIDEO_ID",
+      "_blank",
+      "noopener,noreferrer"
+    )
+  }
+  onMouseEnter={() => setIsVideoHovered(true)}
+  onMouseLeave={() => setIsVideoHovered(false)}
+  className="group flex items-center gap-3 px-8 py-4 bg-transparent border-2 border-primary text-white rounded-full hover:bg-primary hover:text-white transition-all duration-300 hover:scale-105"
+>
+  <Play
+    className="w-5 h-5 group-hover:scale-110 transition-transform"
+    fill="currentColor"
+  />
+
+  {/*  ZigZag Text */}
+  <span className="font-semibold overflow-hidden">
+    <ZigZagText1 text="Watch Video" />
+  </span>
+</button>
+
+
               <motion.button
-                        onClick={handleEnroll}
-                          whileHover={{ scale: 1.05, y: -2 }}
-                          whileTap={{ scale: 0.95 }}
-                          className="px-8 py-4 rounded-full font-semibold text-white shadow-xl cursor-pointer"
-                          style={{
-                            background: `linear-gradient(135deg, var(--color-primary), var(--color-secondary))`
-                          }}
-                        >
-                          Enroll Now
-                        </motion.button>
-
-              
-            </motion.div>
-
-            <motion.div
-              variants={itemVariants}
-              className="flex items-center space-x-8 pt-4"
-            >
-              <div className="text-center">
-                <div className="text-3xl font-bold">500+</div>
-                <div className="text-sm text-white/80">Students</div>
-              </div>
-              <div className="w-px h-12 bg-white/20" />
-              <div className="text-center">
-                <div className="text-3xl font-bold">15+</div>
-                <div className="text-sm text-white/80">Expert Trainers</div>
-              </div>
-              <div className="w-px h-12 bg-white/20" />
-              <div className="text-center">
-                <div className="text-3xl font-bold">10+</div>
-                <div className="text-sm text-white/80">Dance Styles</div>
-              </div>
-            </motion.div>
-          </motion.div>
-
-          {/* RIGHT COLUMN (ORDER SECOND ON MOBILE) */}
-          <motion.div
-            initial={{ opacity: 0, scale: 0.8, x: 50 }}
-            animate={{ opacity: 1, scale: 1, x: 0 }}
-            transition={{ duration: 0.8, delay: 0.5, ease: "easeOut" }}
-            className="relative z-10 order-2 lg:order-0"
-          >
-            <motion.div animate={floatingAnimation} className="relative">
-              {/* Glass Card Container */}
-              <div className="relative rounded-3xl overflow-hidden backdrop-blur-lg bg-white/10 border border-white/20 shadow-2xl p-2">
-                <div className="rounded-2xl overflow-hidden">
-                  <video
-                    src={vedio1}
-                    autoPlay
-                    loop
-                    muted
-                    playsInline
-                    className="w-full h-auto object-cover overflow-hidden"
-                  />
-                </div>
-              </div>
-
-              <motion.div
-                animate={decorativeCircleFloat}
-                className="absolute -top-6 -right-6 w-24 h-24 rounded-full blur-xl opacity-60"
-                style={{ background: "var(--color-elegantLight)" }}
-              />
-
-              <motion.div
-                animate={{
-                  y: [0, 20, 0],
-                  x: [0, -15, 0],
-                  transition: {
-                    duration: 6,
-                    repeat: Infinity,
-                    ease: "easeInOut",
-                  },
+                whileHover={{
+                  scale: 1.08,
+                  transition: { type: "spring", stiffness: 300 },
                 }}
-                className="absolute -bottom-8 -left-8 w-32 h-32 rounded-full blur-2xl opacity-50"
-                style={{ background: "var(--color-secondary)" }}
-              />
-
-              <motion.div
-                animate={{
-                  rotate: [0, 360],
-                  transition: {
-                    duration: 20,
-                    repeat: Infinity,
-                    ease: "linear",
-                  },
+                whileTap={{ scale: 0.95 }}
+                className="group relative px-8 py-4 text-white rounded-full font-medium text-2xl shadow-2xl overflow-hidden"
+                style={{
+                  background: `linear-gradient(135deg, var(--color-primary) 0%, var(--color-secondary) 100%)`,
                 }}
-                className="absolute top-1/2 -right-12 w-20 h-20 border-4 border-white/20 rounded-full"
-              />
+              >
+                <span
+                  onClick={handleEnrollButton}
+                  className="relative z-10 flex items-center font-semibold text-base gap-2"
+                >
+                  <ZigZagText1 text="Enroll Now" />
 
-              <motion.div
-                animate={{
-                  rotate: [0, -360],
-                  transition: {
-                    duration: 15,
-                    repeat: Infinity,
-                    ease: "linear",
-                  },
-                }}
-                className="absolute bottom-1/4 -left-8 w-16 h-16 border-4 border-white/30 rounded-lg"
-              />
-            </motion.div>
-          </motion.div>
+                  <motion.span
+                    animate={{ x: [0, 6, 0] }}
+                    transition={{
+                      duration: 1.2,
+                      repeat: Infinity,
+                      ease: "easeInOut",
+                    }}
+                  >
+                    <ArrowRight className="w-5 h-5" />
+                  </motion.span>
+                </span>
+
+                {/* Glow */}
+                <motion.div
+                  animate={{ opacity: [0.2, 0.6, 0.2] }}
+                  transition={{ duration: 1.5, repeat: Infinity }}
+                  className="absolute inset-0 bg-linear-to-r from-primary/20 to-secondary/20"
+                />
+              </motion.button>
+            </div>
+          </div>
         </div>
       </div>
 
-      {/* Bottom Wave Decoration */}
-      <div className="absolute bottom-0 left-0 right-0 overflow-hidden leading-none">
-  <svg
-    viewBox="0 0 1440 120"
-    className="w-full h-auto block -mb-px"
-    preserveAspectRatio="none"
-  >
-    <path
-      d="M0,64L80,69.3C160,75,320,85,480,80C640,75,800,53,960,48C1120,43,1280,53,1360,58.7L1440,64L1440,120L1360,120C1280,120,1120,120,960,120C800,120,640,120,480,120C320,120,160,120,80,120L0,120Z"
-      fill="var(--color-elegantLight)"
-    />
-  </svg>
-</div>
+      {/* Bottom Info Bar */}
+      <div
+        className="relative z-10 px-8 lg:px-16 pb-8  opacity-0  animate-fadeInUp"
+        style={{ animationDelay: "1s", animationFillMode: "forwards" }}
+      >
+        <div className="flex flex-wrap items-center justify-between gap-8 border-t border-gray-800 pt-8">
+          <div className="flex items-center gap-12">
+            <div>
+              <div className="text-3xl font-bold text-primary">
+                <CountUP end={500} />+
+              </div>
+              <div className="text-sm text-gray-400">Students</div>
+            </div>
+            <div>
+              <div className="text-3xl font-bold text-primary">
+                <CountUP end={20} />+
+              </div>
+              <div className="text-sm text-gray-400">Instructors</div>
+            </div>
+            <div>
+              <div className="text-3xl font-bold text-primary">
+                <CountUP end={15} />+
+              </div>
+              <div className="text-sm text-gray-400">Dance Styles</div>
+            </div>
+          </div>
 
-    </section>
+        
+
+        </div>
+      </div>
+
+      <style>{`
+        @keyframes fadeInUp {
+          from {
+            opacity: 0;
+            transform: translateY(20px);
+          }
+          to {
+            opacity: 1;
+            transform: translateY(0);
+          }
+        }
+        .animate-fadeInUp {
+          animation: fadeInUp 0.8s ease-out;
+        }
+      `}</style>
+    </div>
   );
 };
 
-export default HeroSection;
+export default DanceAcademyHero;

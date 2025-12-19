@@ -22,17 +22,20 @@ export default function Choreography() {
   ];
 
   return (
-    <div className="min-h-full p-8" style={{ backgroundColor: 'var(--color-elegantLight)' }}>
-      <style>{`
-        @theme {
-          --color-primary: #f6466c;
-          --color-secondary: #f28b00;
-          --color-elegantDark: #1a1a1a;
-          --color-elegantLight: #faf7f4;
-        }
-      `}</style>
+    <div className="min-h-full p-8 bg-gray-100 py-20">
+     
       
       <div className="max-w-7xl mx-auto">
+        <motion.div
+                    initial={{ scaleX: 0 }}
+                    whileInView={{ scaleX: 1 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.8, delay: 0.2 }}
+                    className="w-20 h-1 mx-auto mb-4 rounded-full"
+                    style={{ 
+                      background: `linear-gradient(90deg, var(--color-primary), var(--color-secondary))`
+                    }}
+                  />
         <div className="flex justify-center">
   <motion.div
     initial={{ opacity: 0, scale: 0.9 }}
@@ -55,7 +58,7 @@ export default function Choreography() {
   </motion.div>
 </div>
 
-        <h1 className="text-4xl md:text-5xl font-bold text-center mb-4" style={{ color: 'var(--color-elegantDark)' }}>
+        <h1 className="text-4xl md:text-6xl font-bold text-center mb-4" style={{ color: 'var(--color-elegantDark)' }}>
           Wedding Choreography <span className='text-primary'> Services</span>
         </h1>
         <p className="text-center text-gray-600 mb-12 max-w-2xl mx-auto">

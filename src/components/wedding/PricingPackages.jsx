@@ -50,7 +50,7 @@ export default function PricingPackage() {
   ];
 
   return (
-    <div className="min-h-full p-8" style={{ backgroundColor: 'var(--color-elegantLight)' }}>
+    <div className="min-h-full py-20 p-8" style={{ backgroundColor: 'var(--color-elegantLight)' }}>
       <style>{`
         @theme {
           --color-primary: #f6466c;
@@ -67,6 +67,17 @@ export default function PricingPackage() {
 
         {/* Pricing Section */}
         <div className="mb-12">
+          <motion.div
+                      initial={{ scaleX: 0 }}
+                      whileInView={{ scaleX: 1 }}
+                      viewport={{ once: true }}
+                      transition={{ duration: 0.8, delay: 0.2 }}
+                      className="w-20 h-1 mx-auto mb-4 rounded-full"
+                      style={{ 
+                        background: `linear-gradient(90deg, var(--color-primary), var(--color-secondary))`
+                      }}
+                    />
+                    
           <div className="flex justify-center">
   <motion.div
     initial={{ opacity: 0, scale: 0.9 }}
@@ -89,7 +100,7 @@ export default function PricingPackage() {
   </motion.div>
 </div>
 
-          <h2 className="text-4xl md:text-5xl font-bold text-center mb-4" style={{ color: 'var(--color-elegantDark)' }}>
+          <h2 className="text-4xl md:text-6xl font-bold text-center mb-4" style={{ color: 'var(--color-elegantDark)' }}>
             Pricing <span className='text-primary'>Packages</span> 
           </h2>
           <p className="text-center text-gray-600 mb-12 max-w-2xl mx-auto">

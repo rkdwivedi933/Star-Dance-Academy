@@ -111,6 +111,14 @@ const Footer = () => {
               performance. Join us to discover your rhythm and express your
               artistry.
             </p>
+            <motion.div variants={itemVariants} className="space-y-4">
+            
+            {/* HORIZONTAL DIVIDER */}
+           <div></div>
+
+            {/* BOTTOM BAR */}{" "}
+            
+          </motion.div>
             <motion.div
               initial={{ scaleX: 0 }}
               whileInView={{ scaleX: 1 }}
@@ -176,6 +184,7 @@ const Footer = () => {
             </div>
           </motion.div>
 
+
           {/* Social */}
           <motion.div variants={itemVariants} className="space-y-4">
             <h3 className="text-lg font-semibold mb-4 text-white">Follow Us</h3>
@@ -199,6 +208,11 @@ const Footer = () => {
               })}
               
             </div>
+            
+           
+            {/* HORIZONTAL DIVIDER */}
+           <div></div>
+
             {/* BOTTOM BAR */}{" "}
             
           </motion.div>

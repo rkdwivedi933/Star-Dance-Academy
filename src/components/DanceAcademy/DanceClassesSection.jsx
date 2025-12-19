@@ -16,7 +16,7 @@ export default function DanceClassesSection() {
       description:
         "Urban street dance with high energy, powerful moves, and expressive freestyle elements.",
       image:
-        "https://plus.unsplash.com/premium_photo-1710064217185-8351ee74d564?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTN8fEhpcCUyMEhvcHxlbnwwfHwwfHx8MA%3D%3D",
+        "https://plus.unsplash.com/premium_photo-1710064217185-8351ee74d564?w=600&auto=format&fit=crop&q=60",
     },
     {
       icon: Sparkles,
@@ -24,7 +24,7 @@ export default function DanceClassesSection() {
       description:
         "Fluid and expressive movement combining modern dance techniques with emotional storytelling.",
       image:
-        "https://images.unsplash.com/photo-1550026593-cb89847b168d?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8Y29udGVtcG9yYXJ5JTIwZGFuY2V8ZW58MHx8MHx8fDA%3D",
+        "https://images.unsplash.com/photo-1550026593-cb89847b168d?w=600&auto=format&fit=crop&q=60",
     },
     {
       icon: Music,
@@ -32,7 +32,7 @@ export default function DanceClassesSection() {
       description:
         "Vibrant Indian dance fusion with colorful expressions, dramatic moves, and cinematic flair.",
       image:
-        "https://images.unsplash.com/photo-1463592177119-bab2a00f3ccb?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8Ym9sbHl3b29kJTIwZGFuY2V8ZW58MHx8MHx8fDA%3D",
+        "https://images.unsplash.com/photo-1463592177119-bab2a00f3ccb?w=600&auto=format&fit=crop&q=60",
     },
     {
       icon: Theater,
@@ -40,7 +40,7 @@ export default function DanceClassesSection() {
       description:
         "Traditional Indian classical dance with intricate footwork, graceful spins, and rich cultural heritage.",
       image:
-        "https://images.unsplash.com/photo-1479812627010-aa5bd9d173b1?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8S2F0aGFrfGVufDB8fDB8fHww",
+        "https://images.unsplash.com/photo-1479812627010-aa5bd9d173b1?w=600&auto=format&fit=crop&q=60",
     },
     {
       icon: Flame,
@@ -54,129 +54,130 @@ export default function DanceClassesSection() {
       icon: Theater,
       name: "Zumba",
       description:
-        "Unleash your creativity with improvisational dance, blending multiple styles and personal expression.",
+        "High‑energy fitness dance inspired by Latin rhythms and cardio movement.",
       image:
-        "https://images.unsplash.com/photo-1524594152303-9fd13543fe6e?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8enVtYmF8ZW58MHx8MHx8fDA%3D",
+        "https://images.unsplash.com/photo-1524594152303-9fd13543fe6e?w=600&auto=format&fit=crop&q=60",
     },
   ];
 
-  const containerVariants = {
+  const container = {
     hidden: { opacity: 0 },
-    visible: {
+    show: {
       opacity: 1,
-      transition: { staggerChildren: 0.12, delayChildren: 0.2 },
+      transition: { staggerChildren: 0.15, delayChildren: 0.2 },
     },
   };
 
-  const itemVariants = {
-    hidden: { opacity: 0, y: 40 },
-    visible: {
+  const card = {
+    hidden: { opacity: 0, y: 60, scale: 0.9 },
+    show: {
       opacity: 1,
       y: 0,
-      transition: { duration: 0.7, ease: [0.33, 1, 0.68, 1] },
+      scale: 1,
+      transition: { type: "spring", stiffness: 80, damping: 14 },
     },
   };
 
   return (
-    <section className="relative w-full py-20 px-6 bg-elegantLight/90 overflow-hidden">
-      {/* soft background glow */}
+    <section className="relative py-20 px-6 bg-elegantLight overflow-hidden">
+      {/* floating glow blobs */}
+      
       
 
       <div className="max-w-7xl mx-auto relative z-10">
-        {/* Header */}
+        {/* header */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8 }}
-          className="text-center mb-14"
+          className="text-center mb-16"
         >
-          <div
-            className="w-20 h-1 rounded-full mx-auto mb-6"
-            style={{ backgroundColor: "var(--color-secondary)" }}
-          />
-
           <motion.div
-            initial={{ opacity: 0, scale: 0.9 }}
-            whileInView={{ opacity: 1, scale: 1 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5 }}
-            className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full shadow-lg border mb-5"
-            style={{
-              background:
-                "linear-gradient(135deg, rgba(246,70,108,0.1), rgba(242,139,0,0.1))",
-              borderColor: "var(--color-primary)",
-            }}
+                              initial={{ scaleX: 0 }}
+                              whileInView={{ scaleX: 1 }}
+                              viewport={{ once: true }}
+                              transition={{ duration: 0.8, delay: 0.2 }}
+                              className="w-20 h-1 mx-auto mb-4 rounded-full"
+                              style={{ 
+                                background: `linear-gradient(90deg, var(--color-primary), var(--color-secondary))`
+                              }}
+                            />
+          <motion.div
+            initial={{ scale: 0 }}
+            whileInView={{ scale: 1 }}
+            transition={{ type: "spring", stiffness: 120 }}
+            className="inline-flex items-center gap-2 px-6 py-3 rounded-full mb-6 bg-white/70 backdrop-blur border"
           >
             <HeartHandshake size={18} className="text-primary" />
-            <span className="text-sm font-semibold text-elegantDark">
-              Classes
-            </span>
+            <span className="font-semibold">Classes</span>
           </motion.div>
 
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-4 text-elegantDark">
+          <h2 className="text-4xl md:text-6xl font-bold text-elegantDark mb-4">
             Classes <span className="text-primary">Offered</span>
           </h2>
-
           <p className="text-lg text-elegantDark/80 max-w-2xl mx-auto">
             Discover your rhythm with our diverse dance programs
           </p>
         </motion.div>
 
-        {/* Cards */}
+        {/* cards */}
         <motion.div
-          variants={containerVariants}
+          variants={container}
           initial="hidden"
-          whileInView="visible"
+          whileInView="show"
           viewport={{ once: true }}
-          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
+          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10"
         >
-          {classes.map((classItem, index) => {
-            const Icon = classItem.icon;
-
+          {classes.map((item, i) => {
+            const Icon = item.icon;
             return (
               <motion.div
-                key={index}
-                variants={itemVariants}
-                whileHover={{ y: -12 }}
-                transition={{ duration: 0.3 }}
-                className="group"
+                key={i}
+                variants={card}
+                whileHover={{ rotateX: 6, rotateY: -6, y: -14 }}
+                transition={{ type: "spring", stiffness: 120 }}
+                className="group perspective"
               >
-                <div className="relative h-full rounded-2xl bg-white/70 backdrop-blur-xl border border-secondary/30 shadow-xl overflow-hidden">
-                  {/* Image */}
+                <div className="relative h-full rounded-2xl bg-white/80 backdrop-blur-xl border-2 border-primary shadow-2xl overflow-hidden">
+                  {/* shimmer overlay */}
+                  <motion.div
+                    initial={{ x: "-100%" }}
+                    whileHover={{ x: "100%" }}
+                    transition={{ duration: 1 }}
+                    className="absolute inset-0 bg-linear-to-r from-transparent via-white/30 to-transparent"
+                  />
+
+                  {/* image */}
                   <div className="relative h-44 overflow-hidden">
-                    <img
-                      src={classItem.image}
-                      alt={classItem.name}
-                      className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                    <motion.img
+                      src={item.image}
+                      alt={item.name}
+                      className="w-full h-full object-cover"
+                      whileHover={{ scale: 1.15 }}
+                      transition={{ duration: 0.6 }}
                     />
-                    <div className="absolute inset-0 bg-black/25" />
+                    <div className="absolute inset-0 bg-black/30" />
                   </div>
 
-                  {/* Content */}
-                  <div className="p-7 text-center relative">
-                    {/* Icon */}
-                    <div className="w-16 h-16 -mt-14 mb-5 mx-auto rounded-full flex items-center justify-center bg-white shadow-lg border border-secondary/30">
+                  {/* content */}
+                  <div className="p-8 text-center relative">
+                    <motion.div
+                      animate={{ y: [0, -6, 0] }}
+                      transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
+                      className="w-16 h-16 -mt-16 mb-5 mx-auto rounded-full bg-white shadow-lg flex items-center justify-center"
+                    >
                       <Icon className="w-8 h-8 text-secondary" />
-                    </div>
+                    </motion.div>
 
-                    <h3 className="text-2xl font-bold mb-3 text-elegantDark">
-                      {classItem.name}
+                    <h3 className="text-2xl font-bold text-elegantDark mb-3">
+                      {item.name}
                     </h3>
-
-                    <p className="text-sm md:text-base text-elegantDark/85 leading-relaxed font-medium">
-                      {classItem.description}
+                    <p className="text-elegantDark/80 text-sm leading-relaxed">
+                      {item.description}
                     </p>
                   </div>
 
-                  {/* bottom accent */}
-                  <div
-                    className="absolute bottom-0 left-0 right-0 h-1"
-                    style={{
-                      background:
-                        "linear-gradient(90deg, var(--color-primary), var(--color-secondary))",
-                    }}
-                  />
                 </div>
               </motion.div>
             );

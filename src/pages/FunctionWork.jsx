@@ -1,20 +1,22 @@
 import React from 'react'
-import FunctionWorkHeader from '../components/functionwork/FunctionWorkHeader'
+
 import FunctionChoreographyInfo from '../components/functionwork/FunctionChoreographyInfo'
 import FunctionServices from '../components/functionwork/FunctionServices'
 import FunctionVideoSection from '../components/functionwork/FunctionVideoSection'
 
-import ServicesCTA from '../components/functionwork/ServicesCTA'
+import ServicesHeroSection from '../components/functionwork/ServicesHeroSection'
+import CTAServices from '../components/functionwork/CTAServices'
 
 function FunctionWork() {
   return (
     <div>
-      <FunctionWorkHeader/>
+      <ServicesHeroSection/>
+     
       <FunctionChoreographyInfo/>
       <FunctionServices/>
       <FunctionVideoSection/>
+      <CTAServices/>
       
-      <ServicesCTA/>
     </div>
   )
 }

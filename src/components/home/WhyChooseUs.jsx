@@ -60,22 +60,27 @@ const reasons = [
 /* -------------------- ANIMATIONS -------------------- */
 
 const containerVariants = {
-  hidden: { opacity: 0 },
+  hidden: {},
   visible: {
-    opacity: 1,
     transition: {
-      staggerChildren: 0.12,
+      staggerChildren: 0.14,
       delayChildren: 0.15,
     },
   },
 };
 
 const cardVariants = {
-  hidden: { opacity: 0, y: 24 },
+  hidden: {
+    opacity: 0,
+    x: -120, // 👈 LEFT SIDE
+  },
   visible: {
     opacity: 1,
-    y: 0,
-    transition: { duration: 0.55, ease: 'easeOut' },
+    x: 0,
+    transition: {
+      duration: 0.6,
+      ease: [0.22, 0.61, 0.36, 1],
+    },
   },
 };
 
@@ -92,25 +97,16 @@ const ReasonCard = ({ reason }) => {
     >
       <div
         className="
-          relative h-full rounded-xl border
+          relative h-full rounded-xl shadow-2xl
           p-4 sm:p-5 md:p-6
-          shadow-md md:shadow-xl
+          border-2 border-primary
           transition-all duration-300
+          group-hover:border-secondary
         "
         style={{
           background: 'rgba(255,255,255,0.06)',
-          borderColor: 'rgba(255,255,255,0.12)',
         }}
       >
-        {/* Accent Bar */}
-        <div
-          className="absolute left-0 top-0 bottom-0 w-1 rounded-l-xl"
-          style={{
-            background:
-              'linear-gradient(180deg, var(--color-primary), var(--color-secondary))',
-          }}
-        />
-
         {/* Icon */}
         <div className="relative mb-3 md:mb-4">
           <div
@@ -119,9 +115,7 @@ const ReasonCard = ({ reason }) => {
               w-12 h-12 md:w-14 md:h-14
               rounded-full blur-xl opacity-40
             "
-            
           />
-
           <div
             className="
               relative flex items-center justify-center
@@ -154,11 +148,9 @@ const ReasonCard = ({ reason }) => {
 
 const WhyChooseUs = () => {
   return (
-    <section
-      className="relative overflow-hidden px-4 py-12 md:py-20"
-      style={{ background: 'var(--color-elegantLight)' }}
-    >
+    <section className="relative overflow-hidden px-4 py-20 md:py-20 ">
       <div className="max-w-7xl mx-auto relative z-10">
+
         {/* Header */}
         <motion.div
           initial={{ opacity: 0, y: -20 }}
@@ -168,15 +160,23 @@ const WhyChooseUs = () => {
           className="text-center mb-10 md:mb-16"
         >
           <motion.div
+            initial={{ scaleX: 0 }}
+            whileInView={{ scaleX: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8, delay: 0.2 }}
+            className="w-20 h-1 mx-auto mb-4 rounded-full"
+            style={{
+              background:
+                'linear-gradient(90deg, var(--color-primary), var(--color-secondary))',
+            }}
+          />
+
+          <motion.div
             initial={{ opacity: 0, scale: 0.9 }}
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true }}
             transition={{ duration: 0.4 }}
-            className="
-              inline-flex items-center gap-2
-              px-4 py-2 rounded-full
-              border shadow-md mb-4
-            "
+            className="inline-flex items-center gap-2 px-4 py-2 rounded-full border shadow-md mb-4"
             style={{
               background:
                 'linear-gradient(135deg, rgba(246,70,108,0.1), rgba(242,139,0,0.1))',
@@ -193,7 +193,7 @@ const WhyChooseUs = () => {
           </motion.div>
 
           <h2
-            className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4"
+            className="text-4xl md:text-6xl font-bold mb-4"
             style={{ color: 'var(--color-elegantDark)' }}
           >
             Why Choose{' '}
@@ -214,7 +214,7 @@ const WhyChooseUs = () => {
           variants={containerVariants}
           initial="hidden"
           whileInView="visible"
-          viewport={{ once: true }}
+          viewport={{ once: true, amount: 0.25 }}
           className="
             grid
             grid-cols-1

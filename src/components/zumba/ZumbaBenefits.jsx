@@ -71,12 +71,23 @@ const cardVariants = {
 
 export default function ZumbaBenefits() {
   return (
-    <section className="relative py-20 px-4 sm:px-6 lg:px-8  bg-elegantLight/90  overflow-hidden">
+    <section className="relative py-20 px-4 sm:px-6 lg:px-8  bg-gray-100  overflow-hidden">
 
 
 
       {/* Badge */}
       <div className="flex justify-center mb-6 relative z-10">
+        <div>
+<motion.div
+                    initial={{ scaleX: 0 }}
+                    whileInView={{ scaleX: 1 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.8, delay: 0.2 }}
+                    className="w-20 h-1 mx-auto mb-4 rounded-full"
+                    style={{ 
+                      background: `linear-gradient(90deg, var(--color-primary), var(--color-secondary))`
+                    }}
+                  />
         <motion.div
           initial={{ opacity: 0, scale: 0.9 }}
           whileInView={{ opacity: 1, scale: 1 }}
@@ -93,19 +104,30 @@ export default function ZumbaBenefits() {
           <span className="text-sm font-semibold text-elegantDark">
             Benefits
           </span>
+          
         </motion.div>
+        </div>
       </div>
 
       {/* Heading */}
-      <motion.h2
-        initial={{ opacity: 0, y: -20 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true }}
-        transition={{ duration: 0.6 }}
-        className="text-4xl md:text-5xl font-bold text-center mb-14 relative z-10"
-      >
-        Benefits of <span className="text-primary">Zumba</span>
-      </motion.h2>
+      <motion.div
+  initial={{ opacity: 0, y: -20 }}
+  whileInView={{ opacity: 1, y: 0 }}
+  viewport={{ once: true }}
+  transition={{ duration: 0.6 }}
+  className="text-center mb-14 relative z-10"
+>
+  <h2 className="text-4xl md:text-6xl">
+    <span className="font-bold">Benefits of </span>
+    <span className="text-primary font-bold">Zumba</span>
+  </h2>
+
+  <p className="text-gray-600 text-xl max-w-xl mx-auto mt-4">
+    High-energy sessions designed to keep you fit, confident & happy
+  </p>
+</motion.div>
+
+     
 
       {/* Cards */}
       <motion.div
@@ -113,7 +135,7 @@ export default function ZumbaBenefits() {
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true }}
-        className="relative z-10 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto"
+        className="relative z-10 grid grid-cols-1 md:grid-cols-2  lg:grid-cols-3 gap-8 max-w-7xl mx-auto"
       >
         {benefits.map((benefit, index) => {
           const Icon = benefit.icon;
@@ -125,7 +147,7 @@ export default function ZumbaBenefits() {
               transition={{ duration: 0.3 }}
               className="group relative"
             >
-              <div className="relative h-full rounded-2xl bg-white/60 backdrop-blur-xl border border-white/30 shadow-xl overflow-hidden">
+              <div className="relative  h-full rounded-2xl bg-white/60 backdrop-blur-xl border-2 border-primary shadow-xl overflow-hidden">
 
                 {/* Image */}
                 <div className="relative h-44 overflow-hidden">

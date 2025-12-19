@@ -10,7 +10,7 @@ export default function FunctionVideoSection() {
   const thumbnailUrl = "https://images.unsplash.com/photo-1511578314322-379afb476865?w=1200&q=80";
 
   return (
-    <div className="relative w-full py-10 md:py-10 lg:py-10 px-6" style={{ backgroundColor: 'var(--color-elegantLight)' }}>
+    <div className="relative w-full py-20 md:py-20 lg:py-20 px-6" style={{ backgroundColor: 'var(--color-elegantLight)' }}>
       <style>{`
         @theme {
           --color-primary: #f6466c;
@@ -55,7 +55,7 @@ export default function FunctionVideoSection() {
                 </span>
               </motion.div>
           <h2 
-            className="text-3xl md:text-4xl lg:text-5xl font-bold mb-4"
+            className="text-4xl md:text-6xl font-bold mb-4"
             style={{ color: 'var(--color-elegantDark)' }}
           >
             Watch Our Function <span className='text-primary'>Performances</span> 

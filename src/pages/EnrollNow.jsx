@@ -1,16 +1,20 @@
-
-import EnrollHeader from '../components/enrollnow/EnrollHeader'
-import EnrollContactInfo from '../components/enrollnow/EnrollContactInfo'
-
+import EnrollContactInfo from "../components/enrollnow/EnrollContactInfo";
+import EnrollForm from "../components/enrollnow/EnrollForm";
+import EnrollHeroSection from "../components/enrollnow/EnrollHeroSection";
+import GoogleMapSection from "../components/enrollnow/GoogleMapSection";
+import SocialMediaSection from "../components/enrollnow/SocialMediaSection";
 
 function EnrollNow() {
   return (
     <div>
-      <EnrollHeader/>
-      <EnrollContactInfo/>
-    
+      <EnrollHeroSection />
+
+      <EnrollContactInfo />
+      <EnrollForm/>
+      <GoogleMapSection/>
+      <SocialMediaSection/>
     </div>
-  )
+  );
 }
 
-export default EnrollNow
+export default EnrollNow;

@@ -36,7 +36,7 @@ export default function FunctionServices() {
   ];
 
   return (
-    <div className="relative w-full py-10 md:py-10 lg:py-10 px-6 bg-elegantLight/90">
+    <div className="relative w-full py-20 md:py-20 lg:py-20 px-6 bg-gray-100">
       
 
       {/* Background decorative elements */}
@@ -81,7 +81,7 @@ export default function FunctionServices() {
                   Services
                 </span>
               </motion.div>
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-black mb-4">
+          <h2 className="text-4xl md:text-6xl font-bold text-black mb-4">
             Our <span className='text-primary'>Services</span>
           </h2>
           
@@ -159,7 +159,7 @@ export default function FunctionServices() {
                     whileInView={{ scaleX: 1 }}
                     viewport={{ once: true }}
                     transition={{ duration: 0.6, delay: 0.3 + index * 0.1 }}
-                    className="absolute bottom-0 left-0 right-0 h-1 rounded-b-2xl origin-left"
+                    className="absolute bottom-0 left-1 right-1 h-1 rounded-b-2xl origin-left"
                     style={{
                       background: `linear-gradient(90deg, var(--color-primary) 0%, var(--color-secondary) 100%)`
                     }}

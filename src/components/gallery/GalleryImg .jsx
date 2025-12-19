@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { ZoomIn, Heart, Share2, Film, X } from 'lucide-react';
+import { ZoomIn, Heart, Share2, Film, X, Play } from 'lucide-react';
 
 /* ================= LIGHTBOX ================= */
 const VideoLightbox = ({ video, onClose }) => {
@@ -99,8 +99,8 @@ const GalleryImage = ({ image, index }) => {
           animate={{ opacity: isHovered ? 1 : 0 }}
         >
           <div className="flex gap-3">
-            <button className="p-3 bg-white rounded-full">
-              <ZoomIn />
+            <button className="p-3 bg-primary text-white rounded-full">
+              <Play/>
             </button>
            
           </div>
@@ -165,11 +165,20 @@ const itemVariants = {
   };
 
   return (
-    <section className="relative py-10 px-4 lg:px-25 bg-elegantLight">
+    <section className="relative py-20 px-4 lg:px-25 bg-elegantLight">
       <div >
          <div className="max-w-7xl mx-auto relative z-10">
         <motion.div initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }} className="text-center mb-16 md:mb-20">
-         
+         <motion.div
+                               initial={{ scaleX: 0 }}
+                               whileInView={{ scaleX: 1 }}
+                               viewport={{ once: true }}
+                               transition={{ duration: 0.8, delay: 0.2 }}
+                               className="w-20 h-1 mx-auto mb-4 rounded-full"
+                               style={{ 
+                                 background: `linear-gradient(90deg, var(--color-primary), var(--color-secondary))`
+                               }}
+                             />
         <motion.div
                 initial={{ opacity: 0, scale: 0.9 }}
                 whileInView={{ opacity: 1, scale: 1 }}
@@ -188,7 +197,7 @@ const itemVariants = {
               </motion.div>
 
 
-          <h2 className="text-5xl md:text-6xl lg:text-7xl font-bold mb-6 tracking-tight"><span>Our</span> <span className='text-primary'>Album</span></h2>
+          <h2 className="text-4xl md:text-6xl font-bold mb-6 tracking-tight"><span>Our</span> <span className='text-primary'>Album</span></h2>
           <p className="text-xl md:text-2xl text-gray-600 max-w-3xl mx-auto leading-relaxed">Explore moments of love, joy, and celebration captured in stunning detail</p>
         </motion.div>
 

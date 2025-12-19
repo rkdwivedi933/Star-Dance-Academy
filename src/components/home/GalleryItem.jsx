@@ -167,8 +167,9 @@ const GalleryPreview = () => {
   };
   return (
     <div
-      className="w-full px-4 py-12"
-      style={{ background: "var(--color-elegantLight)" }}
+      className="w-full px-4 py-20 bg-gray-100 "
+       
+      
     >
       {/* Section Heading */}
       <div className="text-center mb-10">
@@ -203,7 +204,7 @@ const GalleryPreview = () => {
           </span>
         </motion.div>
         <h2
-          className="text-3xl md:text-4xl lg:text-5xl font-bold mb-3"
+          className="text-4xl md:text-6xl font-bold mb-3"
           style={{ color: "var(--color-elegantDark)" }}
         >
           Gallery <span className="text-primary">Highlights</span>
@@ -298,7 +299,7 @@ const GalleryPreview = () => {
             background: `linear-gradient(135deg, var(--color-primary), var(--color-secondary))`,
           }}
         >
-          Explore All Programs
+          Explore All Gallery
         </motion.button>
       </motion.div>
     </div>

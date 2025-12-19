@@ -10,7 +10,7 @@ export default function ZumbaClassTimings() {
   ];
 
   return (
-    <section className="relative py-20 px-4 bg-linear-to-br bg-elegantLight  overflow-hidden">
+    <section className="relative py-20 px-4 bg-linear-to-br bg-white  overflow-hidden">
       
     
 
@@ -23,6 +23,16 @@ export default function ZumbaClassTimings() {
       >
         {/* Heading */}
         <div className="text-center mb-14">
+          <motion.div
+                              initial={{ scaleX: 0 }}
+                              whileInView={{ scaleX: 1 }}
+                              viewport={{ once: true }}
+                              transition={{ duration: 0.8, delay: 0.2 }}
+                              className="w-20 h-1 mx-auto mb-4 rounded-full"
+                              style={{ 
+                                background: `linear-gradient(90deg, var(--color-primary), var(--color-secondary))`
+                              }}
+                            />
           <div className="flex justify-center">
   <motion.div
     initial={{ opacity: 0, scale: 0.9 }}
@@ -46,11 +56,11 @@ export default function ZumbaClassTimings() {
 </div>
 
 
-          <h2 className="text-4xl md:text-5xl font-extrabold text-gray-900 mb-4">
+          <h2 className="text-4xl md:text-6xl font-extrabold text-gray-900 mb-4">
             Zumba Class <span className="text-primary">Schedule</span> 
           </h2>
 
-          <p className="text-gray-600 max-w-xl mx-auto">
+          <p className="text-gray-600 text-xl max-w-xl mx-auto">
             High-energy sessions designed to keep you fit, confident & happy 
           </p>
         </div>

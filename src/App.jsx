@@ -17,11 +17,16 @@ import EnrollNow from "./pages/EnrollNow";
 import ScrollToTop from "./components/latout/ScrollToTop";
 import GoogleMapSection from "./components/enrollnow/GoogleMapSection";
 import BlogInfo from "./pages/BlogInfo";
+import SplashCursor from "./components/latout/SplashCursor";
+import FixedButtons from "./components/latout/FixedButtons";
+
+
 
 function App() {
   return (
     <BrowserRouter>
       <ScrollToTop />
+      <FixedButtons/>
       <Navbar />
 
       <Routes>
@@ -37,6 +42,7 @@ function App() {
         <Route path="/address" element={<GoogleMapSection />} />
         <Route path="/blog-details/:id" element={<BlogInfo />} />
       </Routes>
+{/* <SplashCursor/> */}
 
       <Footer />
     </BrowserRouter>

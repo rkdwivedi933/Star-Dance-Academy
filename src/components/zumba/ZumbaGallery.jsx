@@ -1,205 +1,218 @@
+import React from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { useState } from 'react';
-import { Image, X, ZoomIn } from 'lucide-react';
+import { ZoomIn, Heart, Share2, Film, X, Play } from 'lucide-react';
 
-export default function ZumbaGallery() {
-  const [selectedImage, setSelectedImage] = useState(null);
+/* ================= LIGHTBOX ================= */
+const VideoLightbox = ({ video, onClose }) => {
+  React.useEffect(() => {
+    document.body.style.overflow = 'hidden';
+    return () => (document.body.style.overflow = 'auto');
+  }, []);
 
-  const images = [
-    { id: 1, src: 'https://plus.unsplash.com/premium_photo-1681492501033-38a4b2887a8e?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OXx8enVtYmF8ZW58MHx8MHx8fDA%3D', alt: 'Zumba Dance Session 1', tall: true },
-    { id: 2, src: 'https://media.istockphoto.com/id/950806258/photo/fitness-group.webp?a=1&b=1&s=612x612&w=0&k=20&c=M19ioQJHHpRRSkBJgpperXEe3kmkjHsp2s0U9js_svU=', alt: 'Zumba Dance Session 2', tall: false },
-    { id: 3, src: 'https://media.istockphoto.com/id/1098211914/photo/people-training-at-dance-class.webp?a=1&b=1&s=612x612&w=0&k=20&c=CZ7hExuQhaEPx0uNi2hLyhdHta60-ktw5rtHu5Ig0rQ=', alt: 'Zumba Dance Session 3', tall: false },
-    { id: 4, src: 'https://images.unsplash.com/photo-1607962837359-5e7e89f86776?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8enVtYmF8ZW58MHx8MHx8fDA%3D', alt: 'Zumba Dance Session 4', tall: true },
-    { id: 5, src: 'https://plus.unsplash.com/premium_photo-1663054933667-fb307cea9aab?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8enVtYmF8ZW58MHx8MHx8fDA%3D', alt: 'Zumba Dance Session 5', tall: false},
-        { id: 6, src: 'https://images.unsplash.com/photo-1524594152303-9fd13543fe6e?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8enVtYmF8ZW58MHx8MHx8fDA%3D', alt: 'Zumba Dance Session 4', tall: false },
-    
-  ];
+  return (
+    <AnimatePresence>
+      <motion.div
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        exit={{ opacity: 0 }}
+        className="fixed inset-0 z-50 bg-black/80 flex items-center justify-center"
+        onClick={onClose}
+      >
+        <motion.div
+          initial={{ scale: 0.85 }}
+          animate={{ scale: 1 }}
+          exit={{ scale: 0.85 }}
+          transition={{ duration: 0.3 }}
+          className="relative max-w-5xl w-full px-4"
+          onClick={(e) => e.stopPropagation()}
+        >
+          <button
+            onClick={onClose}
+            className="absolute -top-10 right-0 text-white "
+          >
+            <X />
+          </button>
 
-  const containerVariants = {
-    hidden: { opacity: 0 },
+          <video
+            src={video}
+            autoPlay
+            loop
+            muted
+            controls
+            playsInline
+            className="w-full rounded-2xl"
+          />
+        </motion.div>
+      </motion.div>
+    </AnimatePresence>
+  );
+};
+
+/* ================ GALLERY ITEM ================= */
+const GalleryImage = ({ image, index }) => {
+  const [isHovered, setIsHovered] = React.useState(false);
+  const [open, setOpen] = React.useState(false);
+
+  return (
+    <>
+      <motion.div
+        
+        onHoverStart={() => setIsHovered(true)}
+        onHoverEnd={() => setIsHovered(false)}
+        onClick={() => setOpen(true)}
+        className={`${image.span} relative overflow-hidden rounded-2xl cursor-pointer`}
+        style={{
+          boxShadow: isHovered
+            ? '0 20px 60px rgba(242,139,0,.3)'
+            : '0 8px 32px rgba(246,70,108,.08)',
+          border: isHovered
+            ? '2px solid rgba(242,139,0,.6)'
+            : '1px solid rgba(246,70,108,.12)',
+        }}
+      >
+        {/* VIDEO */}
+        <motion.div
+          className="relative w-full h-full overflow-hidden"
+          animate={{ scale: isHovered ? 1.15 : 1 }}
+        >
+          <video
+            src={image.url}
+            
+            loop
+            muted
+            playsInline
+            className="w-full h-full object-cover"
+          />
+        </motion.div>
+
+        {/* Overlay */}
+        <motion.div
+          className="absolute inset-0 bg-black/40"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: isHovered ? 1 : 0 }}
+        />
+
+        {/* Center Actions */}
+        <motion.div
+          className="absolute inset-0 flex items-center justify-center"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: isHovered ? 1 : 0 }}
+        >
+          <div className="flex gap-3">
+            <button className="p-3 bg-primary text-white rounded-full">
+              <Play />
+            </button>
+           
+          </div>
+        </motion.div>
+      </motion.div>
+
+      {open && <VideoLightbox video={image.url} onClose={() => setOpen(false)} />}
+    </>
+  );
+};
+
+/* ================= MAIN PAGE ================= */
+const ZumbaGllery = () => {
+ const galleryImages = [
+  {
+    id: 1,
+    url: "https://www.pexels.com/download/video/7975413.mp4",
+    category: "Dance Academy",
+    span: "md:col-span-1 md:row-span-1"
+  },
+  {
+    id: 2,
+    url: "https://www.pexels.com/download/video/6332464.mp4",
+    category: "Wedding Couple",
+    span: "md:col-span-1 md:row-span-1"
+  },
+  {
+    id: 3,
+    url: "https://www.pexels.com/download/video/8955363.mp4",
+    category: "Zumba",
+    span: "md:col-span-1 md:row-span-1"
+  },
+  {
+    id: 4,
+    url: "https://www.pexels.com/download/video/8503574.mp4",
+    category: "Dance Show",
+    span: "md:col-span-1 md:row-span-1"
+  },
+  {
+    id: 5,
+    url: "https://www.pexels.com/download/video/3873059.mp4",
+    category: "Stage Performance",
+    span: "md:col-span-2 md:row-span-1"
+  },
+   {
+    id: 6,
+    url: "https://www.pexels.com/download/video/8503574.mp4",
+    category: "Stage Performance",
+    span: "md:col-span-2 md:row-span-1"
+  }
+];
+
+
+const itemVariants = {
+    hidden: { opacity: 0, scale: 0.85, y: 20 },
     visible: {
       opacity: 1,
-      transition: {
-        staggerChildren: 0.1,
-        delayChildren: 0.2
-      }
-    }
-  };
-
-  const itemVariants = {
-    hidden: { opacity: 0, y: 30 },
-    visible: {
-      opacity: 1,
+      scale: 1,
       y: 0,
-      transition: { duration: 0.6, ease: 'easeOut' }
+      transition: { duration: 0.5, ease: [0.22, 1, 0.36, 1] }
     }
   };
 
   return (
-    <section className="w-full min-h-full px-4 py-10 bg-linear-to-br bg-elegantLight">
-     
-
-      <div className="max-w-7xl mx-auto">
-        {/* Section Title */}
+    <section className="relative py-20 px-4 lg:px-25 bg-elegantLight">
+      <div >
+         <div className="max-w-7xl mx-auto relative z-10">
+        <motion.div initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }} className="text-center mb-16 md:mb-20">
+         <motion.div
+                               initial={{ scaleX: 0 }}
+                               whileInView={{ scaleX: 1 }}
+                               viewport={{ once: true }}
+                               transition={{ duration: 0.8, delay: 0.2 }}
+                               className="w-20 h-1 mx-auto mb-4 rounded-full"
+                               style={{ 
+                                 background: `linear-gradient(90deg, var(--color-primary), var(--color-secondary))`
+                               }}
+                             />
         <motion.div
-          initial={{ opacity: 0, y: -20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-          className="text-center mb-12"
-        >
-          <div className="flex justify-center">
-  <motion.div
-    initial={{ opacity: 0, scale: 0.9 }}
-    whileInView={{ opacity: 1, scale: 1 }}
-    viewport={{ once: true }}
-    transition={{ duration: 0.5 }}
-    className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full shadow-lg border mb-5"
-    style={{ 
-      background: 'linear-gradient(135deg, rgba(246, 70, 108, 0.1), rgba(242, 139, 0, 0.1))',
-      borderColor: 'var(--color-primary)'
-    }}
-  >
-    <Image size={18} style={{ color: 'var(--color-primary)' }} />
-    <span
-      className="text-sm font-semibold"
-      style={{ color: 'var(--color-elegantDark)' }}
-    >
-      Moments
-    </span>
-  </motion.div>
-</div>
-
-          <h2 className="text-4xl md:text-5xl font-bold text-gray-800 mb-4">
-            Zumba <span className='text-primary'>Moments</span> 
-          </h2>
-          <div className="w-24 h-1 mx-auto rounded-full" style={{ backgroundColor: 'var(--color-primary)' }}></div>
-          <p className="mt-4 text-gray-600 text-lg">Capturing the energy and joy of our dance sessions</p>
-        </motion.div>
-
-        {/* Gallery Grid */}
-        <motion.div
-          variants={containerVariants}
-          initial="hidden"
-          animate="visible"
-          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-2"
-        >
-          {images.map((image) => (
-            <motion.div
-              key={image.id}
-              variants={itemVariants}
-              className={`relative group cursor-pointer overflow-hidden rounded-xl shadow-lg ${
-                image.tall ? 'row-span-2' : ''
-              } ${image.wide ? 'col-span-2 md:col-span-3 lg:col-span-4' : ''}`}
-              onClick={() => setSelectedImage(image)}
-            >
-              {/* Image Container */}
-              <motion.div
-                className="relative w-full h-full"
-                whileHover={{ scale: 1.06 }}
-                transition={{ duration: 0.4, ease: 'easeOut' }}
-              >
-                <img
-                  src={image.src}
-                  alt={image.alt}
-                  className={`w-full object-cover ${
-                    image.tall ? 'h-107 md:h-[550px] ' : image.wide ? 'h-64 md:h-70' : 'h-51 md:h-68 '
-                  }`}
-                  onError={(e) => {
-                    e.target.src = `https://placehold.co/600x400/e74c3c/white?text=Zumba+${image.id}`;
-                  }}
-                />
-
-                {/* Dark Overlay on Hover */}
-                <motion.div
-                  className="absolute inset-0 bg-black"
-                  initial={{ opacity: 0 }}
-                  whileHover={{ opacity: 0.4 }}
-                  transition={{ duration: 0.3 }}
-                />
-
-                {/* Zoom Icon */}
-                <motion.div
-                  className="absolute inset-0 flex items-center justify-center"
-                  initial={{ opacity: 0, scale: 0.8 }}
-                  whileHover={{ opacity: 1, scale: 1 }}
-                  transition={{ duration: 0.3 }}
-                >
-                  <div className="bg-white rounded-full p-3 shadow-xl">
-                    <ZoomIn className="w-6 h-6" style={{ color: 'var(--color-primary)' }} />
-                  </div>
-                </motion.div>
-
-                
-              </motion.div>
-            </motion.div>
-          ))}
-        </motion.div>
-      </div>
-
-      {/* Lightbox Modal */}
-      <AnimatePresence>
-        {selectedImage && (
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            transition={{ duration: 0.3 }}
-            className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black bg-opacity-90"
-            onClick={() => setSelectedImage(null)}
-          >
-            {/* Close Button */}
-            <motion.button
-              initial={{ opacity: 0, scale: 0.8 }}
-              animate={{ opacity: 1, scale: 1 }}
-              exit={{ opacity: 0, scale: 0.8 }}
-              transition={{ delay: 0.1 }}
-              className="absolute top-4 right-4 p-3 bg-primary rounded-full shadow-xl hover:bg-secondary  transition-colors z-10"
-              onClick={() => setSelectedImage(null)}
-            >
-              <X className="w-6 h-6 text-white" />
-            </motion.button>
-
-            {/* Image Container */}
-            <motion.div
-              initial={{ scale: 0.8, opacity: 0 }}
-              animate={{ scale: 1, opacity: 1 }}
-              exit={{ scale: 0.8, opacity: 0 }}
-              transition={{ duration: 0.3, ease: 'easeOut' }}
-              className="relative max-w-2xl md:mb-60 lg:mb-20 max-h-[90vh] w-full"
-              onClick={(e) => e.stopPropagation()}
-            >
-              <img
-                src={selectedImage.src}
-                alt={selectedImage.alt}
-                className="w-full h-full object-contain rounded-xl shadow-2xl"
-                onError={(e) => {
-                  e.target.src = `https://placehold.co/800x600/e74c3c/white?text=Zumba+${selectedImage.id}`;
+                initial={{ opacity: 0, scale: 0.9 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5 }}
+                className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full shadow-lg border mb-5"
+                style={{ 
+                  background: 'linear-gradient(135deg, rgba(246, 70, 108, 0.1), rgba(242, 139, 0, 0.1))',
+                  borderColor: 'var(--color-primary)'
                 }}
-              />
-
-              {/* Image Caption */}
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.2 }}
-                className="absolute bottom-0 left-0 right-0 p-6 bg-linear-to-t from-black to-transparent rounded-b-xl"
               >
-                <div className="flex items-center justify-between">
-                  <div>
-                    <span
-                      className="inline-block px-3 py-1 rounded-full text-white text-xs font-bold mb-2"
-                      style={{ backgroundColor: 'var(--color-primary)' }}
-                    >
-                      Zumba
-                    </span>
-                    <p className="text-white text-lg font-semibold">{selectedImage.alt}</p>
-                  </div>
-                </div>
+                <Film size={18} style={{ color: 'var(--color-primary)' }} />
+                <span className="text-sm font-semibold" style={{ color: 'var(--color-elegantDark)' }}>
+                  Album
+                </span>
               </motion.div>
-            </motion.div>
-          </motion.div>
-        )}
-      </AnimatePresence>
+
+
+          <h2 className="text-4xl md:text-6xl font-bold mb-6 tracking-tight"><span>Our</span> <span className='text-primary'>Album</span></h2>
+          <p className="text-xl md:text-2xl text-gray-600 max-w-3xl mx-auto leading-relaxed">Explore moments of love, joy, and celebration captured in stunning detail</p>
+        </motion.div>
+
+        
+      </div>
+        
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-4 auto-rows-[180px] ">
+          {galleryImages.map((image, index) => (
+            <GalleryImage key={image.id} image={image} index={index} />
+            
+          ))}
+        </div>
+      </div>
     </section>
   );
-}
+};
+
+export default ZumbaGllery;

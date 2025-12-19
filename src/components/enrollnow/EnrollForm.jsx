@@ -94,7 +94,7 @@ export default function EnrollForm() {
   };
 
   return (
-    <div className="min-h-full bg-linear-to-br bg-elegantLight/90 py-10 sm:py-10 px-4 sm:px-6 lg:px-8">
+    <div className="min-h-full  bg-gray-100  py-20 sm:py-20 px-4 sm:px-6 lg:px-8">
       <div className="max-w-3xl mx-auto">
         {/* Header */}
         <motion.div
@@ -103,6 +103,16 @@ export default function EnrollForm() {
           transition={{ duration: 0.6 }}
           className="text-center mb-10 sm:mb-12"
         >
+           <motion.div
+                  initial={{ scaleX: 0 }}
+                  whileInView={{ scaleX: 1 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.8, delay: 0.2 }}
+                  className="w-20 h-1 mx-auto mb-4 rounded-full"
+                  style={{
+                    background: `linear-gradient(90deg, var(--color-primary), var(--color-secondary))`,
+                  }}
+                />
           <motion.div
                 initial={{ opacity: 0, scale: 0.9 }}
                 whileInView={{ opacity: 1, scale: 1 }}
@@ -119,7 +129,7 @@ export default function EnrollForm() {
                   Contact Form
                 </span>
               </motion.div>
-          <h1 className="text-4xl sm:text-5xl font-bold text-gray-900 mb-4">
+          <h1 className="text-4xl sm:text-6xl font-bold text-gray-900 mb-4">
             Send Us a <span className="text-primary">Message</span>
           </h1>
           <p className="text-gray-600 text-lg">

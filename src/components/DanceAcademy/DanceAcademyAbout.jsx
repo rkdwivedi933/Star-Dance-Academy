@@ -3,17 +3,10 @@ import { motion } from "framer-motion";
 export default function DanceAcademyAbout() {
   return (
     <div
-      className="relative w-full py-16 md:py-24 lg:py-32 px-6"
-      style={{ backgroundColor: "var(--color-elegantLight)" }}
+      className="relative w-full py-20 md:py-20 lg:py-20 px-6"
+    
     >
-      <style>{`
-        @theme {
-          --color-primary: #f6466c;
-          --color-secondary: #f28b00;
-          --color-elegantDark: #1a1a1a;
-          --color-elegantLight: #faf7f4;
-        }
-      `}</style>
+     
 
       <div className="max-w-7xl mx-auto">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">

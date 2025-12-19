@@ -80,8 +80,8 @@ const ServicesCards = () => {
 
   return (
     <section 
-      className="py-10 md:py-20 px-4 sm:px-6 lg:px-8"
-      style={{ background: 'var(--color-elegantLight)' }}
+      className="py-20 md:py-20 px-4 sm:px-6 lg:px-8"
+      
     >
       <div className="max-w-7xl mx-auto">
         {/* Section Header */}
@@ -119,7 +119,7 @@ const ServicesCards = () => {
                 </span>
               </motion.div>
           <h2 
-            className="text-3xl md:text-4xl lg:text-5xl font-bold mb-4"
+            className="text-4xl md:text-6xl font-bold mb-4"
             style={{ color: 'var(--color-elegantDark)' }}
           >
             Our <span className='text-primary'>Services</span> 
@@ -135,7 +135,7 @@ const ServicesCards = () => {
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, margin: "-100px" }}
-          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8"
+          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8 "
         >
           {services.map((service, index) => {
             const Icon = service.icon;
@@ -146,13 +146,13 @@ const ServicesCards = () => {
                 whileHover={{ 
                   y: -10, 
                   scale: 1.02,
-                  boxShadow: '0 20px 40px rgba(0, 0, 0, 0.12)'
+                  
                 }}
                 transition={{ duration: 0.3 }}
                 className="relative group"
               >
-                <div className="relative h-full bg-white/60 backdrop-blur-lg rounded-2xl p-8 shadow-lg border border-white/20 overflow-hidden">
-                  {/* Decorative Floating Bubble */}
+                <div className="relative  h-full bg-white/35 backdrop-blur-xl rounded-2xl p-8 px-2 shadow-xl border-2  border-primary overflow-hidden">
+
                   <motion.div
                     animate={floatingBubbleAnimation}
                     className="absolute top-4 right-4 w-24 h-24 rounded-full blur-2xl opacity-50 pointer-events-none"
@@ -171,7 +171,7 @@ const ServicesCards = () => {
 
                   {/* Icon */}
                   <motion.div
-                    whileHover={{ rotate: 360, scale: 1.1 }}
+                    whileHover={{ rotate: 60, scale: 1.1 }}
                     transition={{ duration: 0.6 }}
                     className="inline-flex items-center justify-center w-16 h-16 rounded-full mb-6"
                     style={{ 
@@ -255,7 +255,7 @@ const ServicesCards = () => {
               background: `linear-gradient(135deg, var(--color-primary), var(--color-secondary))`
             }}
           >
-            Explore All Programs
+            Explore All Services
           </motion.button>
         </motion.div>
       </div>

@@ -4,7 +4,8 @@ import DanceAcademyAbout from '../components/DanceAcademy/DanceAcademyAbout'
 import DanceAcademyFeatures from '../components/DanceAcademy/DanceAcademyFeatures'
 import DanceClassesSection from '../components/DanceAcademy/DanceClassesSection'
 import InstructorSection from '../components/DanceAcademy/InstructorSection'
-import DanceAcademyCTA from '../components/DanceAcademy/DanceAcademyCTA'
+
+import CTAabout from '../components/DanceAcademy/CTAabout'
 
 function DanceAcademy() {
   return (
@@ -14,7 +15,8 @@ function DanceAcademy() {
      <DanceAcademyFeatures/>
      <DanceClassesSection/>
      <InstructorSection/>
-     <DanceAcademyCTA/>
+     <CTAabout/>
+     
     </div>
   )
 }

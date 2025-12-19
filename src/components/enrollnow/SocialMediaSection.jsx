@@ -48,15 +48,8 @@ export default function SocialMediaSection() {
   };
 
   return (
-    <div className="relative w-full py-10 md:py-10 px-6" style={{ backgroundColor: 'var(--color-elegantLight)' }}>
-      <style>{`
-        @theme {
-          --color-primary: #f6466c;
-          --color-secondary: #f28b00;
-          --color-elegantDark: #1a1a1a;
-          --color-elegantLight: #faf7f4;
-        }
-      `}</style>
+    <div className="min-h-full w-full py-20 md:py-20 px-6 bg-gray-100" >
+      
 
       <div className="max-w-4xl mx-auto text-center">
         
@@ -89,14 +82,14 @@ export default function SocialMediaSection() {
               >
                 <Share2 size={18} style={{ color: 'var(--color-primary)' }} />
                 <span className="text-sm font-semibold" style={{ color: 'var(--color-elegantDark)' }}>
-                  Follow Us
+                  Follow  Us
                 </span>
               </motion.div>
           <h2 
             className="text-2xl md:text-3xl lg:text-4xl font-bold"
             style={{ color: 'var(--color-elegantDark)' }}
           >
-            Follow Us
+            Follow <span className='text-primary'>Us</span> 
           </h2>
         </motion.div>
 
