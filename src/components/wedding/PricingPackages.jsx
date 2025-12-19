@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { User, Music, Users, Sparkles, Heart, Crown, IndianRupee } from 'lucide-react';
+import {  Sparkles, Heart, Crown, IndianRupee } from 'lucide-react';
 
 export default function PricingPackage() {
   
@@ -172,7 +172,7 @@ export default function PricingPackage() {
         <motion.button
           whileHover={{ scale: 1.05 }}
           whileTap={{ scale: 0.95 }}
-          className="mt-auto w-full py-3 rounded-lg font-semibold text-white"
+          className="mt-auto w-full py-3 cursor-pointer rounded-lg font-semibold text-white"
           style={{
             background:
               'linear-gradient(135deg, var(--color-primary), var(--color-secondary))',

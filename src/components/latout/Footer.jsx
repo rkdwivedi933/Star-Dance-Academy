@@ -9,6 +9,7 @@ import {
 } from "lucide-react";
 import { useNavigate } from "react-router-dom";
 import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 
 const Footer = () => {
   const navigate = useNavigate();
@@ -47,7 +48,12 @@ const Footer = () => {
     { icon: Facebook, label: "Facebook", href: "#" },
     { icon: Youtube, label: "YouTube", href: "#" },
   ];
-
+const footerLinks = [
+  { label: "Privacy Policy", path: "/privacy-policy" },
+  { label: "Terms of Service", path: "/terms-of-service" },
+  { label: "Rules & Regulations", path: "/rules-and-regulations" },
+  { label: "404", path: "/*" },
+];
   const containerVariants = {
     hidden: { opacity: 0, y: 50 },
     visible: {
@@ -228,20 +234,17 @@ const Footer = () => {
 </p>
 
 
-  <div className="flex items-center gap-4 md:px-6 whitespace-nowrap text-center md:text-left">
-    {[
-      "Privacy Policy",
-      "Terms of Service",
-      "Rules & Regulations",
-    ].map((one) => (
-      <span
-        key={one}
-        className="hover:text-primary cursor-pointer transition-colors"
-      >
-        {one}
-      </span>
-    ))}
-  </div>
+   <div className="flex items-center gap-4 md:px-6 whitespace-nowrap text-center md:text-left">
+      {footerLinks.map((item) => (
+        <Link
+          key={item.label}
+          to={item.path}
+          className="hover:text-primary cursor-pointer transition-colors"
+        >
+          {item.label}
+        </Link>
+      ))}
+    </div>
 
   <div className="flex items-center gap-2 whitespace-nowrap text-center md:text-left">
   <span>Designed & Developed By</span>

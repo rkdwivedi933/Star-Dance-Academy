@@ -210,7 +210,7 @@ export default function EnrollForm() {
                  
                   
                   {/* Button Content */}
-                  <span className="relative flex items-center justify-center gap-3">
+                  <span className="relative flex items-center justify-center gap-3 cursor-pointer">
                     {isSubmitting ? (
                       <>
                         <motion.div

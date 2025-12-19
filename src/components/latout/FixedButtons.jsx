@@ -60,7 +60,7 @@ export default function FixedButtons() {
         )}
       </AnimatePresence>
 
-      <div className="fixed bottom-8 right-8 z-[999] flex flex-col items-end gap-3">
+      <div className="fixed bottom-8  right-8 z-[999] flex flex-col items-end gap-3 cursor-pointer">
         {/* Social Icons Popup */}
         <AnimatePresence>
           {open && (
@@ -119,7 +119,7 @@ export default function FixedButtons() {
           onClick={() => setOpen(!open)}
           whileHover={{ scale: 1.05 }}
           whileTap={{ scale: 0.95 }}
-          className="relative h-12 w-12 rounded-full bg-gradient-to-br from-primary  to-secondary text-white flex items-center justify-center shadow-2xl overflow-hidden group"
+          className="relative h-12 w-12 cursor-pointer rounded-full bg-gradient-to-br from-primary  to-secondary text-white flex items-center justify-center shadow-2xl overflow-hidden group"
         >
           {/* Animated background gradient */}
           <div className="absolute inset-0 bg-gradient-to-br from-primary to-secondary  opacity-0 group-hover:opacity-100 transition-opacity duration-300" />

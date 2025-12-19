@@ -188,7 +188,7 @@ const BlogSection = ({ limit, clamp = 2 }) => {
             onClick={() => navigate("/blog")}
             whileHover={{ scale: 1.05, y: -2 }}
             whileTap={{ scale: 0.95 }}
-            className="px-8 py-4 rounded-full font-semibold text-white shadow-xl"
+            className="px-8 py-4 cursor-pointer rounded-full font-semibold text-white shadow-xl"
             style={{
               background:
                 "linear-gradient(135deg, var(--color-primary), var(--color-secondary))",

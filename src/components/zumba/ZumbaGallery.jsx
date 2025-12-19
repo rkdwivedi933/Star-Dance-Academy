@@ -119,13 +119,13 @@ const ZumbaGllery = () => {
  const galleryImages = [
   {
     id: 1,
-    url: "https://www.pexels.com/download/video/7975413.mp4",
+    url: "https://www.pexels.com/download/video/8503574.mp4",
     category: "Dance Academy",
     span: "md:col-span-1 md:row-span-1"
   },
   {
     id: 2,
-    url: "https://www.pexels.com/download/video/6332464.mp4",
+    url: "https://www.pexels.com/download/video/3873059.mp4",
     category: "Wedding Couple",
     span: "md:col-span-1 md:row-span-1"
   },

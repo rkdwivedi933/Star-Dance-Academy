@@ -100,6 +100,7 @@ const DanceAcademyHero = () => {
               style={{ animationDelay: "0.8s", animationFillMode: "forwards" }}
             >
               <button
+            
   onClick={() =>
     window.open(
       "https://www.youtube.com/watch?v=VIDEO_ID",
@@ -109,7 +110,7 @@ const DanceAcademyHero = () => {
   }
   onMouseEnter={() => setIsVideoHovered(true)}
   onMouseLeave={() => setIsVideoHovered(false)}
-  className="group flex items-center gap-3 px-8 py-4 bg-transparent border-2 border-primary text-white rounded-full hover:bg-primary hover:text-white transition-all duration-300 hover:scale-105"
+  className="group cursor-pointer flex items-center gap-3 px-8 py-4 bg-transparent border-2 border-primary text-white rounded-full hover:bg-primary hover:text-white transition-all duration-300 hover:scale-105"
 >
   <Play
     className="w-5 h-5 group-hover:scale-110 transition-transform"
@@ -129,7 +130,7 @@ const DanceAcademyHero = () => {
                   transition: { type: "spring", stiffness: 300 },
                 }}
                 whileTap={{ scale: 0.95 }}
-                className="group relative px-8 py-4 text-white rounded-full font-medium text-2xl shadow-2xl overflow-hidden"
+                className="group cursor-pointer relative px-8 py-4 text-white rounded-full font-medium text-2xl shadow-2xl overflow-hidden"
                 style={{
                   background: `linear-gradient(135deg, var(--color-primary) 0%, var(--color-secondary) 100%)`,
                 }}

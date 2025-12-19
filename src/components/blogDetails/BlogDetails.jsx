@@ -30,7 +30,7 @@ const BlogDetails = () => {
 
   return (
     <div className="min-h-full text-black relative overflow-hidden pt-28 pb-20 px-5 bg-elegantLight/90">
-      <div className="max-w-4xl mx-auto relative z-10">
+      <div className="max-w-4xl mx-auto relative z-10 cursor-pointer">
 
         {/* ================= GO BACK (ABOVE TITLE) ================= */}
         <motion.button
@@ -43,7 +43,7 @@ const BlogDetails = () => {
                      px-4 py-2 rounded-full
                      bg-white/70 backdrop-blur-md
                      border border-primary
-                     text-primary font-semibold
+                     text-primary font-semibold cursor-pointer
                      shadow-md"
         >
           <ArrowLeft size={18} />

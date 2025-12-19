@@ -19,6 +19,10 @@ import GoogleMapSection from "./components/enrollnow/GoogleMapSection";
 import BlogInfo from "./pages/BlogInfo";
 import SplashCursor from "./components/latout/SplashCursor";
 import FixedButtons from "./components/latout/FixedButtons";
+import PrivacyPolicy from "./pages/PrivacyPolicy";
+import TermsConditions from "./pages/TermsConditions";
+import RulesRegulations from "./pages/RulesRegulations";
+import NotFound from "./pages/NotFound";
 
 
 
@@ -41,6 +45,10 @@ function App() {
         <Route path="/enroll-now" element={<EnrollNow />} />
         <Route path="/address" element={<GoogleMapSection />} />
         <Route path="/blog-details/:id" element={<BlogInfo />} />
+         <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+         <Route path="/terms-of-service" element={<TermsConditions />} />
+         <Route path="/rules-and-regulations" element={<RulesRegulations />} />
+         <Route path="/*" element={<NotFound />} />
       </Routes>
 {/* <SplashCursor/> */}
 

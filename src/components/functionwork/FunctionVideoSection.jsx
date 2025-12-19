@@ -75,7 +75,7 @@ export default function FunctionVideoSection() {
           whileInView={{ opacity: 1, scale: 1 }}
           viewport={{ once: true, margin: "-100px" }}
           transition={{ duration: 0.8, delay: 0.3, ease: [0.33, 1, 0.68, 1] }}
-          className="relative group"
+          className="relative group "
         >
           
 
@@ -86,7 +86,7 @@ export default function FunctionVideoSection() {
           >
             {/* Video or Thumbnail */}
             {isPlaying ? (
-              <div className="relative w-full aspect-video bg-black">
+              <div className="relative w-full aspect-video bg-black ">
                 <iframe
                   className="absolute inset-0 w-full h-full"
                   src={`${videoUrl}?autoplay=1`}
@@ -111,7 +111,7 @@ export default function FunctionVideoSection() {
                   onClick={() => setIsPlaying(true)}
                   whileHover={{ scale: 1.1 }}
                   whileTap={{ scale: 0.95 }}
-                  className="absolute inset-0 flex items-center justify-center "
+                  className="absolute inset-0 flex cursor-pointer items-center justify-center "
                   aria-label="Play video"
                 >
                   <motion.div

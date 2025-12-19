@@ -71,33 +71,32 @@ const GalleryImage = ({ image, index }) => {
         }}
       >
         {/* VIDEO */}
-        <motion.div
-  className="relative w-full h-full overflow-hidden"
-  animate={{ scale: isHovered ? 1.15 : 1 }}
->
-  {/* VIDEO */}
-  <video
-    src={image.url}
-    loop
-    muted
-    playsInline
-    className="w-full h-full object-cover"
-  />
-
-  {/* DARK OVERLAY (optional) */}
-  <div className="absolute inset-0 bg-black/30" />
-
-  {/* PLAY ICON */}
+        <div className="relative w-full aspect-video rounded-2xl overflow-hidden">
   <motion.div
-    className="absolute inset-0 flex items-center justify-center pointer-events-none"
-    initial={{ scale: 0.9, opacity: 0.8 }}
-    whileHover={{ scale: 1 }}
+    className="absolute inset-0"
+    animate={{ scale: isHovered ? 1.15 : 1 }}
+    transition={{ duration: 0.6, ease: "easeOut" }}
   >
-    <div className="w-16 h-16 bg-primary  rounded-full flex items-center justify-center shadow-xl">
-      <Play className="w-7 h-7 text-white ml-1" />
+    {/* VIDEO */}
+    <video
+      src={image.url}
+      loop
+      muted
+      playsInline
+      className="w-full h-full object-cover"
+    />
+
+    
+
+    {/* PLAY ICON */}
+    <div className="absolute inset-0 flex items-center justify-center">
+      <div className="w-16 h-16 bg-primary rounded-full flex items-center justify-center shadow-xl">
+        <Play className="w-7 h-7 text-white ml-1" />
+      </div>
     </div>
   </motion.div>
-</motion.div>
+</div>
+
 
         {/* Overlay */}
         <motion.div
@@ -119,13 +118,13 @@ const GalleryImg = () => {
  const galleryImages = [
   {
     id: 1,
-    url: "https://www.pexels.com/download/video/7975413.mp4",
+    url: "https://www.pexels.com/download/video/8955363.mp4",
     category: "Dance Academy",
     span: "md:col-span-1 md:row-span-1"
   },
   {
     id: 2,
-    url: "https://www.pexels.com/download/video/6332464.mp4",
+    url: "https://www.pexels.com/download/video/3873059.mp4",
     category: "Wedding Couple",
     span: "md:col-span-1 md:row-span-1"
   },
@@ -206,7 +205,8 @@ const itemVariants = {
         
       </div>
         
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-4 auto-rows-[180px] ">
+       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-4">
+
           {galleryImages.map((image, index) => (
             <GalleryImage key={image.id} image={image} index={index} />
             

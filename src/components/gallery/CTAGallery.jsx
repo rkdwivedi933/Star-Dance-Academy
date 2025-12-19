@@ -81,7 +81,7 @@ const CTAGallery = () => {
     transition: { type: "spring", stiffness: 300 },
   }}
   whileTap={{ scale: 0.95 }}
-  className="group relative px-4 py-2 text-white rounded-full font-bold text-lg shadow-2xl overflow-hidden"
+  className="group cursor-pointer relative px-4 py-2 text-white rounded-full font-bold text-lg shadow-2xl overflow-hidden"
   style={{
     background: `linear-gradient(135deg, var(--color-primary) 0%, var(--color-secondary) 100%)`,
   }}
