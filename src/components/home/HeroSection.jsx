@@ -97,41 +97,68 @@ const DanceAcademyHero = () => {
               className="flex flex-wrap  items-center gap-4 opacity-0  animate-fadeInUp"
               style={{ animationDelay: "0.8s", animationFillMode: "forwards" }}
             >
-             <div className="flex items-center justify-center gap-6 flex-nowrap ">
+             <div className="flex items-center justify-center gap-4 sm:gap-6 flex-nowrap">
   {/* Watch Video */}
-    <button
-      onClick={() =>
-        window.open(
-          "https://www.youtube.com/watch?v=VIDEO_ID",
-          "_blank",
-          "noopener,noreferrer"
-        )
-      }
-      className="group flex items-center gap-2  px-6 lg:px-8 py-4 border-2 border-primary text-white rounded-full hover:bg-primary transition-all duration-300 whitespace-nowrap"
-    >
-      <Play className="w-5 h-5" fill="currentColor" />
-      <span className="font-semibold">
-        <ZigZagText1 text="Watch Video" />
-      </span>
-    </button>
+  <button
+    onClick={() =>
+      window.open(
+        "https://www.youtube.com/watch?v=VIDEO_ID",
+        "_blank",
+        "noopener,noreferrer"
+      )
+    }
+    className="
+      group
+      flex items-center justify-center
+      gap-2 sm:gap-3
+      px-4 sm:px-6 lg:px-8
+      py-3 sm:py-4
+      border-2 border-primary
+      text-white
+      rounded-full
+      hover:bg-primary
+      transition-all duration-300
+      whitespace-nowrap
+      text-sm sm:text-base
+      font-semibold
+    "
+  >
+    <Play className="w-4 h-4 sm:w-5 sm:h-5 shrink-0" fill="currentColor" />
+    <span className="leading-none">
+      <ZigZagText1 text="Watch Video" />
+    </span>
+  </button>
 
   {/* Enroll Now */}
   <motion.button
     whileHover={{ scale: 1.05 }}
     whileTap={{ scale: 0.95 }}
     onClick={handleEnrollButton}
-    className="relative px-8 py-4 border border-primary rounded-full text-white font-semibold shadow-xl whitespace-nowrap"
+    className="
+      relative
+      flex items-center justify-center
+      gap-2 sm:gap-3
+      px-4 sm:px-6 lg:px-8
+      py-3 sm:py-4
+      rounded-full border-2 border-primary
+      text-white
+      whitespace-nowrap
+      text-sm sm:text-base
+      font-semibold
+      shadow-xl
+    "
     style={{
       background:
         "linear-gradient(135deg, var(--color-primary), var(--color-secondary))",
     }}
   >
-    <span className="flex items-center gap-2">
+    <span className="leading-none">
       <ZigZagText1 text="Enroll Now" />
-      <ArrowRight className="w-5 h-5" />
     </span>
+    <ArrowRight className="w-4 h-4 sm:w-5 sm:h-5 shrink-0" />
   </motion.button>
 </div>
+
 
 
             </div>
