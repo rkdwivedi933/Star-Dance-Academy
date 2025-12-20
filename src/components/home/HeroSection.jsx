@@ -99,21 +99,21 @@ const DanceAcademyHero = () => {
             >
              <div className="flex items-center justify-center gap-6 flex-nowrap ">
   {/* Watch Video */}
-  <button
-    onClick={() =>
-      window.open(
-        "https://www.youtube.com/watch?v=VIDEO_ID",
-        "_blank",
-        "noopener,noreferrer"
-      )
-    }
-    className="group flex items-center  px-6 lg:px-8 py-4 border-2 border-primary text-white rounded-full hover:bg-primary transition-all duration-300 whitespace-nowrap"
-  >
-    <Play className="w-5 h-5" fill="currentColor" />
-    <span className="font-semibold">
-      <ZigZagText1 text="Watch Video" />
-    </span>
-  </button>
+    <button
+      onClick={() =>
+        window.open(
+          "https://www.youtube.com/watch?v=VIDEO_ID",
+          "_blank",
+          "noopener,noreferrer"
+        )
+      }
+      className="group flex items-center gap-2  px-6 lg:px-8 py-4 border-2 border-primary text-white rounded-full hover:bg-primary transition-all duration-300 whitespace-nowrap"
+    >
+      <Play className="w-5 h-5" fill="currentColor" />
+      <span className="font-semibold">
+        <ZigZagText1 text="Watch Video" />
+      </span>
+    </button>
 
   {/* Enroll Now */}
   <motion.button
