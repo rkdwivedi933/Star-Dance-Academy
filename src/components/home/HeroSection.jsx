@@ -97,65 +97,43 @@ const DanceAcademyHero = () => {
               className="flex flex-wrap  items-center gap-4 opacity-0  animate-fadeInUp"
               style={{ animationDelay: "0.8s", animationFillMode: "forwards" }}
             >
-              <button
-                onClick={() =>
-                  window.open(
-                    "https://www.youtube.com/watch?v=VIDEO_ID",
-                    "_blank",
-                    "noopener,noreferrer"
-                  )
-                }
-                onMouseEnter={() => setIsVideoHovered(true)}
-                onMouseLeave={() => setIsVideoHovered(false)}
-                className="group cursor-pointer flex items-center gap-3 px-8 py-4 bg-transparent border-2 border-primary text-white rounded-full hover:bg-primary hover:text-white transition-all duration-300 hover:scale-105"
-              >
-                <Play
-                  className="w-5 h-5 group-hover:scale-110 transition-transform"
-                  fill="currentColor"
-                />
+             <div className="flex items-center justify-center gap-6 flex-nowrap ">
+  {/* Watch Video */}
+  <button
+    onClick={() =>
+      window.open(
+        "https://www.youtube.com/watch?v=VIDEO_ID",
+        "_blank",
+        "noopener,noreferrer"
+      )
+    }
+    className="group flex items-center  px-6 lg:px-8 py-4 border-2 border-primary text-white rounded-full hover:bg-primary transition-all duration-300 whitespace-nowrap"
+  >
+    <Play className="w-5 h-5" fill="currentColor" />
+    <span className="font-semibold">
+      <ZigZagText1 text="Watch Video" />
+    </span>
+  </button>
 
-                {/*  ZigZag Text */}
-                <span className="font-semibold overflow-hidden">
-                  <ZigZagText1 text="Watch Video" />
-                </span>
-              </button>
+  {/* Enroll Now */}
+  <motion.button
+    whileHover={{ scale: 1.05 }}
+    whileTap={{ scale: 0.95 }}
+    onClick={handleEnrollButton}
+    className="relative px-8 py-4 border border-primary rounded-full text-white font-semibold shadow-xl whitespace-nowrap"
+    style={{
+      background:
+        "linear-gradient(135deg, var(--color-primary), var(--color-secondary))",
+    }}
+  >
+    <span className="flex items-center gap-2">
+      <ZigZagText1 text="Enroll Now" />
+      <ArrowRight className="w-5 h-5" />
+    </span>
+  </motion.button>
+</div>
 
-              <motion.button
-                whileHover={{
-                  scale: 1.08,
-                  transition: { type: "spring", stiffness: 300 },
-                }}
-                whileTap={{ scale: 0.95 }}
-                className="group cursor-pointer relative px-11 py-4 text-white rounded-full font-medium text-2xl shadow-2xl overflow-hidden"
-                style={{
-                  background: `linear-gradient(135deg, var(--color-primary) 0%, var(--color-secondary) 100%)`,
-                }}
-              >
-                <span
-                  onClick={handleEnrollButton}
-                  className="relative z-10 flex items-center font-semibold text-base gap-2"
-                >
-                  <ZigZagText1 text="Enroll Now" />
 
-                  <motion.span
-                    animate={{ x: [0, 6, 0] }}
-                    transition={{
-                      duration: 1.2,
-                      repeat: Infinity,
-                      ease: "easeInOut",
-                    }}
-                  >
-                    <ArrowRight className="w-5 h-5" />
-                  </motion.span>
-                </span>
-
-                {/* Glow */}
-                <motion.div
-                  animate={{ opacity: [0.2, 0.6, 0.2] }}
-                  transition={{ duration: 1.5, repeat: Infinity }}
-                  className="absolute inset-0 bg-linear-to-r from-primary/20 to-secondary/20"
-                />
-              </motion.button>
             </div>
           </div>
         </div>
