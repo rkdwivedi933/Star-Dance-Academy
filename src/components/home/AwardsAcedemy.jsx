@@ -73,11 +73,11 @@ export default function AwardsAcademy() {
   ];
 
   return (
-    <div className="relative overflow-hidden bg-gray-100">
+    <div className="relativev  overflow-hidden bg-gray-100">
       
 
       {/* HERO */}
-      <section className="relative  py-20 text-center bg-linear-to-r  text-black">
+      <section className="relative  py-10 text-center bg-linear-to-r  text-black">
         <motion.div
           initial={{ scaleX: 0 }}
           whileInView={{ scaleX: 1 }}
@@ -117,7 +117,7 @@ export default function AwardsAcademy() {
       </section>
 
       {/* GRID */}
-      <section className=" px-6 py-20">
+      <section className=" px-4 pb-20">
         <div className="max-w-7xl mx-auto grid grid-cols-1  lg:grid-cols-3 gap-16">
           {awards.map((award, i) => (
             <AwardCard
@@ -154,7 +154,7 @@ function AwardCard({ award, index, onClick }) {
       {/* IMAGE */}
       <div
   onClick={onClick}
-  className="relative aspect-[16/9] w-full overflow-hidden cursor-pointer group"
+  className="relative aspect-video w-full overflow-hidden cursor-pointer group"
 >
   <img
     src={award.image}
@@ -163,7 +163,7 @@ function AwardCard({ award, index, onClick }) {
   />
 
   {/* Overlay */}
-  <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent" />
+  <div className="absolute inset-0 bg-linear-to-t from-black/40 to-transparent" />
 
   {/* YEAR BADGE */}
   <motion.div

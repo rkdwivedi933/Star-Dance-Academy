@@ -48,7 +48,7 @@ export default function WeddingGallery() {
 
   return (
     <div
-      className="min-h-full py-20 p-8 bg-gray-100"
+      className="min-h-full py-20 p-4 bg-gray-100"
    
     >
       

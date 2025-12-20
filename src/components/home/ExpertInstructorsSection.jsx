@@ -8,6 +8,7 @@ import {
   Youtube,
   AwardIcon,
 } from "lucide-react";
+import { section } from "framer-motion/client";
 
 /* ================= INSTRUCTOR CARD ================= */
 
@@ -42,6 +43,7 @@ const ExpertInstructorCard = ({
   };
 
   return (
+    
     <motion.div
       ref={cardRef}
       initial={{ opacity: 0, scale: 0.65 }}
@@ -56,29 +58,35 @@ const ExpertInstructorCard = ({
       whileHover={{ y: -6 }}
       className="
         bg-white rounded-xl overflow-hidden
-        w-full max-w-[340px] sm:max-w-[360px] lg:max-w-[380px]
-        mx-auto
-        px-6 sm:px-8 lg:px-0
+        
+        
+         sm:px-8 lg:px-0
         shadow-sm hover:shadow-xl
-        transition-all duration-300
+        transition-all duration-300 
       "
     >
-      {/* IMAGE */}
-      <div className="h-[220px] sm:h-[240px] lg:h-[250px] overflow-hidden">
-        <img
-          src={image}
-          alt={name}
-          className="w-full h-full object-cover object-top transition-transform duration-500 hover:scale-105"
-        />
-      </div>
+      
+   {/* IMAGE */}
+<div className="w-full h-[220px] sm:h-60 lg:h-[250px] overflow-hidden bg-gray-100 ">
+  <img
+    src={image}
+    alt={name}
+    className="
+      w-full h-full
+      object-cover sm:object-cover lg:object-contain
+      transition-transform duration-500
+    "
+  />
+</div>
+
 
       {/* CONTENT */}
       <div className="p-5 sm:p-6">
         <h3 className="text-lg sm:text-xl font-bold mb-2">{name}</h3>
-        <p className="text-gray-600 text-sm mb-4">{role}</p>
+        <p className="text-gray-600 text-sm mb-2">{role}</p>
 
         {/* SOCIAL */}
-        <div className="flex gap-3 mb-4">
+        <div className="flex gap-3 mb-2">
           {Object.entries(socialLinks).map(([platform, url]) => {
             const Icon = socialIcons[platform];
             return (
@@ -224,7 +232,7 @@ const ExpertInstructorsSection = () => {
             Expert <span className="text-primary">Instructors</span>
           </h2>
 
-          <p className="text-gray-600 text-base sm:text-lg max-w-2xl mx-auto">
+          <p className="text-gray-600 text-xl max-w-2xl mx-auto">
             Learn from world-class professionals shaping the next generation of
             dancers.
           </p>

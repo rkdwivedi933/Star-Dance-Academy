@@ -50,7 +50,7 @@ export default function PricingPackage() {
   ];
 
   return (
-    <div className="min-h-full py-20 p-8" style={{ backgroundColor: 'var(--color-elegantLight)' }}>
+    <div className="min-h-full py-20 p-4" style={{ backgroundColor: 'var(--color-elegantLight)' }}>
       <style>{`
         @theme {
           --color-primary: #f6466c;

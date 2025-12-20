@@ -22,7 +22,7 @@ export default function Choreography() {
   ];
 
   return (
-    <div className="min-h-full p-8 bg-gray-100 py-20">
+    <div className="min-h-full p-4 bg-gray-100 py-20">
      
       
       <div className="max-w-7xl mx-auto">

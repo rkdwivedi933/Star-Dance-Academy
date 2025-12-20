@@ -97,7 +97,7 @@ const ReasonCard = ({ reason }) => {
     >
       <div
         className="
-          relative h-full rounded-xl shadow-2xl
+          relative h-full rounded-xl shadow-xl
           p-4 sm:p-5 md:p-6
           border-2 border-primary
           transition-all duration-300

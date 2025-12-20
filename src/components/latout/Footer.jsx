@@ -52,7 +52,7 @@ const Footer = () => {
     { label: "Privacy Policy", path: "/privacy-policy" },
     { label: "Terms of Service", path: "/terms-of-service" },
     { label: "Rules & Regulations", path: "/rules-and-regulations" },
-    { label: "404", path: "/*" },
+    
   ];
 
   return (
@@ -182,9 +182,14 @@ const Footer = () => {
                 rel="noopener noreferrer"
                 className="flex items-center gap-2"
               >
-                <div className="w-6 h-6 bg-white rounded-full flex items-center justify-center text-xs font-bold text-green-900">
-                  TFP
-                </div>
+                <div className="w-6 h-6 bg-white rounded-full flex items-center justify-center overflow-hidden">
+  <img
+    src="https://www.tfptechnologies.in/_next/static/media/logo2.2e00e4b8.png"
+    alt="TFP Logo"
+    className="w-4 h-4 object-contain"
+  />
+</div>
+
                 <span className="text-primary font-semibold">
                   TFP Technologies
                 </span>

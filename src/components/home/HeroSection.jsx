@@ -97,17 +97,17 @@ const DanceAcademyHero = () => {
               className="flex flex-wrap  items-center gap-4 opacity-0  animate-fadeInUp"
               style={{ animationDelay: "0.8s", animationFillMode: "forwards" }}
             >
-             <div className="flex items-center justify-center gap-4 sm:gap-6 flex-nowrap">
-  {/* Watch Video */}
-  <button
-    onClick={() =>
-      window.open(
-        "https://www.youtube.com/watch?v=VIDEO_ID",
-        "_blank",
-        "noopener,noreferrer"
-      )
-    }
-    className="
+              <div className="flex items-center justify-center gap-4 sm:gap-6 flex-nowrap">
+                {/* Watch Video */}
+                <button
+                  onClick={() =>
+                    window.open(
+                      "https://www.youtube.com/watch?v=VIDEO_ID",
+                      "_blank",
+                      "noopener,noreferrer"
+                    )
+                  }
+                  className="
       group
       flex items-center justify-center
       gap-2 sm:gap-3
@@ -122,19 +122,22 @@ const DanceAcademyHero = () => {
       text-sm sm:text-base
       font-semibold
     "
-  >
-    <Play className="w-4 h-4 sm:w-5 sm:h-5 shrink-0" fill="currentColor" />
-    <span className="leading-none">
-      <ZigZagText1 text="Watch Video" />
-    </span>
-  </button>
+                >
+                  <Play
+                    className="w-4 h-4 sm:w-5 sm:h-5 shrink-0"
+                    fill="currentColor"
+                  />
+                  <span className="leading-none">
+                    <ZigZagText1 text="Watch Video" />
+                  </span>
+                </button>
 
-  {/* Enroll Now */}
-  <motion.button
-    whileHover={{ scale: 1.05 }}
-    whileTap={{ scale: 0.95 }}
-    onClick={handleEnrollButton}
-    className="
+                {/* Enroll Now */}
+                <motion.button
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
+                  onClick={handleEnrollButton}
+                  className="
       relative
       flex items-center justify-center
       gap-2 sm:gap-3
@@ -147,49 +150,53 @@ const DanceAcademyHero = () => {
       font-semibold
       shadow-xl
     "
-    style={{
-      background:
-        "linear-gradient(135deg, var(--color-primary), var(--color-secondary))",
-    }}
-  >
-    <span className="leading-none">
-      <ZigZagText1 text="Enroll Now" />
-    </span>
-    <ArrowRight className="w-4 h-4 sm:w-5 sm:h-5 shrink-0" />
-  </motion.button>
-</div>
-
-
-
+                  style={{
+                    background:
+                      "linear-gradient(135deg, var(--color-primary), var(--color-secondary))",
+                  }}
+                >
+                  <span className="leading-none">
+                    <ZigZagText1 text="Enroll Now" />
+                  </span>
+                  <ArrowRight className="w-4 h-4 sm:w-5 sm:h-5 shrink-0" />
+                </motion.button>
+              </div>
             </div>
           </div>
         </div>
       </div>
 
       {/* Bottom Info Bar */}
+
       <div
-        className="relative z-10 px-8 lg:px-16 pb-8  opacity-0  animate-fadeInUp"
+        className="relative z-10 px-8 lg:px-16 pb-8   opacity-0  animate-fadeInUp"
         style={{ animationDelay: "1s", animationFillMode: "forwards" }}
       >
-        <div className="flex flex-wrap items-center justify-between gap-8 border-t border-gray-800 pt-8">
+        <div className="
+  flex flex-wrap items-center justify-between gap-8
+  border-t 
+  pt-0 lg:pt-8
+  border-transparent sm:border-t
+">
+
           <div className="flex items-center gap-12">
             <div>
-              <div className="text-3xl font-bold text-primary">
+              <div className="text-xl lg:text-2xl font-bold text-primary">
                 <CountUP end={500} />+
               </div>
               <div className="text-sm text-gray-400">Students</div>
             </div>
             <div>
-              <div className="text-3xl font-bold text-primary">
+              <div className="text-xl lg:text-2xl font-bold text-primary">
                 <CountUP end={20} />+
               </div>
               <div className="text-sm text-gray-400">Instructors</div>
             </div>
             <div>
-              <div className="text-3xl font-bold text-primary">
+              <div className="text-xl lg:text-2xl font-bold text-primary">
                 <CountUP end={15} />+
               </div>
-              <div className="text-sm text-gray-400">Dance Styles</div>
+              <div className="text-sm text-gray-400">Dance</div>
             </div>
           </div>
         </div>

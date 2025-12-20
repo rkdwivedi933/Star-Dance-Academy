@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { Building2, Factory, Cpu, MessageSquareQuote } from "lucide-react";
 import { motion } from 'framer-motion';
+import { div } from "framer-motion/client";
 
 const testimonialsData = [
   { 
@@ -39,6 +40,7 @@ const testimonialsData = [
 const TestimonialCard = ({ testimonial }) => {
   const Icon = testimonial.icon;
   return (
+    
     <div className="bg-linear-to-br from-primary/50 to-secondary/50  rounded-2xl p-6 md:p-8  w-full max-w-[300px] mx-auto shrink-0">
       <div className="flex justify-center mb-6">
         <div className="w-24 h-24 md:w-28 md:h-28 rounded-full bg-transparent flex items-center justify-center border-4 border-secondary shadow-lg">

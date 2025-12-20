@@ -79,7 +79,7 @@ export default function DanceClassesSection() {
   };
 
   return (
-    <section className="relative py-20 px-6 bg-elegantLight overflow-hidden">
+    <section className="relative py-20 px-4 bg-elegantLight overflow-hidden">
       {/* floating glow blobs */}
       
       

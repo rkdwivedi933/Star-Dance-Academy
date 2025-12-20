@@ -47,7 +47,7 @@ export default function AnimatedImageCards() {
   };
 
   return (
-    <div className="relative overflow-hidden flex flex-col py-20 items-center bg-gray-100 justify-center p-8 gap-14">
+    <div className="relative overflow-hidden flex flex-col py-20 items-center bg-gray-100 justify-center p-10 gap-14">
       
       {/* Heading */}
       <div className="text-center">
@@ -86,7 +86,7 @@ export default function AnimatedImageCards() {
         variants={containerVariants}
         initial="hidden"
         animate="visible"
-        className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 max-w-7xl w-full"
+        className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-12 max-w-7xl w-full"
       >
         {images.map((img, i) => (
           <motion.div

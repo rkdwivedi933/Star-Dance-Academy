@@ -36,7 +36,7 @@ export default function FunctionServices() {
   ];
 
   return (
-    <div className="relative w-full py-20 md:py-20 lg:py-20 px-6 bg-gray-100">
+    <div className="relative w-full py-20 md:py-20 lg:py-20 px-4 bg-gray-100">
       
 
       {/* Background decorative elements */}

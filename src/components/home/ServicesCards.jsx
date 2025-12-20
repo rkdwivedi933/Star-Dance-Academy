@@ -151,7 +151,7 @@ const ServicesCards = () => {
                 transition={{ duration: 0.3 }}
                 className="relative group"
               >
-                <div className="relative  h-full bg-white/35 backdrop-blur-xl rounded-2xl p-8 px-2 shadow-xl border-2  border-primary overflow-hidden">
+                <div className="relative  h-full bg-white/35 backdrop-blur-xl rounded-2xl p-8 px-4 shadow-xl border-2  border-primary overflow-hidden">
 
                   <motion.div
                     animate={floatingBubbleAnimation}

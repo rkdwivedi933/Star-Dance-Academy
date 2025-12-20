@@ -48,7 +48,7 @@ export default function SocialMediaSection() {
   };
 
   return (
-    <div className="min-h-full w-full py-20 md:py-20 px-6 bg-gray-100" >
+    <div className="min-h-full w-full py-20 md:py-20 px-4 bg-gray-100" >
       
 
       <div className="max-w-4xl mx-auto text-center">

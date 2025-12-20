@@ -33,7 +33,7 @@ const AwardItem = ({ award, index }) => {
               ease: "easeInOut",
               repeatDelay: 1,
             }}
-            className="absolute inset-0 bg-gradient-to-r from-transparent via-white/30 to-transparent"
+            className="absolute inset-0 bg-linear-to-r from-transparent via-white/30 to-transparent"
           />
           <span
             className="relative bg-clip-text text-transparent"
@@ -54,7 +54,7 @@ const AwardItem = ({ award, index }) => {
         >
           {/* Gradient border */}
           <div
-            className="absolute inset-0 rounded-2xl p-[1px]"
+            className="absolute inset-0 rounded-2xl p-px"
             style={{
               background:
                 "linear-gradient(135deg, var(--color-primary), var(--color-secondary))",
@@ -117,7 +117,7 @@ const AwardItem = ({ award, index }) => {
       >
         {/* Gradient border wrapper */}
         <div
-          className="absolute inset-0 rounded-2xl p-[1px] opacity-60 group-hover:opacity-100 transition-opacity duration-300"
+          className="absolute inset-0 rounded-2xl p-px opacity-60 group-hover:opacity-100 transition-opacity duration-300"
           style={{
             background:
               "linear-gradient(135deg, var(--color-primary), var(--color-secondary))",
@@ -251,7 +251,7 @@ const AwardsSection = () => {
         />
       </div>
 
-      <div className="max-w-6xl mx-auto px-6 relative">
+      <div className="max-w-6xl mx-auto px-4 relative">
         {/* Premium Header */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -295,7 +295,7 @@ const AwardsSection = () => {
                 ease: "linear",
                 repeatDelay: 3,
               }}
-              className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent"
+              className="absolute inset-0 bg-linear-to-r from-transparent via-white/20 to-transparent"
             />
 
             <Award size={20} style={{ color: "var(--color-primary)" }} />
@@ -329,7 +329,7 @@ const AwardsSection = () => {
         <div className="relative">
           {/* Vertical timeline line with gradient */}
           <div
-            className="absolute left-1/2 top-0 bottom-0 w-[2px] hidden md:block"
+            className="absolute left-1/2 top-0 bottom-0 w-0.5 hidden md:block"
             style={{
               background:
                 "linear-gradient(180deg, transparent, var(--color-primary) 20%, var(--color-secondary) 80%, transparent)",

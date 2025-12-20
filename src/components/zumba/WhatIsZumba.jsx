@@ -134,7 +134,7 @@ const WhatIsZumba = () => {
                 <div className="flex  gap-6 md:gap-8">
                   <div>
                     <p 
-                      className="text-2xl md:text-3xl font-bold"
+                      className="text-xl  md:text-2xl font-bold"
                       style={{ color: 'var(--color-primary)' }}
                     >
                       500+
@@ -145,7 +145,7 @@ const WhatIsZumba = () => {
                   </div>
                   <div>
                     <p 
-                      className="text-2xl md:text-3xl font-bold"
+                      className="text-xl  md:text-2x font-bold"
                       style={{ color: 'var(--color-secondary)' }}
                     >
                       15M+
@@ -156,7 +156,7 @@ const WhatIsZumba = () => {
                   </div>
                   <div>
                     <p 
-                      className="text-2xl md:text-3xl font-bold"
+                      className="text-xl  md:text-2xl font-bold"
                       style={{ 
                         background: `linear-gradient(135deg, var(--color-primary), var(--color-secondary))`,
                         WebkitBackgroundClip: 'text',

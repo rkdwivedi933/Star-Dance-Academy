@@ -116,7 +116,7 @@ const AboutSection = () => {
         className="absolute top-1/3 left-[8%] w-32 h-32 border border-rose-200/10 rounded-full"
       />
 
-      <div className="relative max-w-7xl mx-auto px-6 lg:px-12 py-20 lg:py-20">
+      <div className="relative max-w-7xl mx-auto px-4 lg:px-12 py-20 lg:py-20">
           {/* Header */}
                  <motion.div
                    initial={{ opacity: 0, y: -20 }}
@@ -186,11 +186,11 @@ const AboutSection = () => {
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true, margin: "-120px" }}
-            className="lg:col-span-5 space-y-8"
+            className="lg:col-span-5 space-y-2"
           >
             {/* Accent Label */}
             <motion.div variants={textItemVariants}>
-              <span className="inline-block text-[16px] tracking-[0.35em] uppercase font-bold text-secondary mb-2">
+              <span className="inline-block text-[16px] tracking-[0.35em] uppercase font-bold text-secondary ">
                 About The Academy
               </span>
             </motion.div>
@@ -235,7 +235,7 @@ const AboutSection = () => {
             {/* Signature Line */}
             <motion.div variants={textItemVariants} className="pt-6">
               <div className="flex items-center gap-4">
-                <div className="h-px  w-12 bg-linear-to-r from-primary to-transparent" />
+                <div className="h-px  w-8 bg-linear-to-r from-primary to-transparent" />
                 <p className="text-[16px] italic text-primary font-bold tracking-wide">
                   Founded with love, sustained by passion
                 </p>
@@ -266,27 +266,54 @@ const AboutSection = () => {
               style={{ y: imageY }}
               className="relative group"
             >
-              <div className="relative aspect-3/4 lg:aspect-3/4 rounded-tl-[80px] rounded-br-[80px] overflow-hidden border-2 border-secondary shadow-2xl shadow-rose-900/10">
-                {/* Image Container - Replace with actual image */}
-                <div className="absolute inset-0 bg-linear-to-br from-rose-100 via-amber-50 to-pink-100 grayscale-30 group-hover:grayscale-0 transition-all duration-700">
-                  <img src="https://plus.unsplash.com/premium_photo-1710064057043-d301e344e348?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8ZGFuY2VyfGVufDB8fDB8fHww" alt="" />
-                  {/* Placeholder - Replace with <img src="your-image.jpg" alt="Dance Academy" /> */}
-                  <div className="absolute inset-0 flex items-center justify-center ">
-                    
-                  </div>
-                </div>
+              <div className="
+  relative 
+  aspect-3/4 
+  sm:aspect-3/4
+  lg:aspect-3/4
+  rounded-tl-4xl sm:rounded-tl-[48px] lg:rounded-tl-[80px]
+  rounded-br-4xl sm:rounded-br-[48px] lg:rounded-br-[80px]
+  overflow-hidden 
+  border-2 border-secondary
+  shadow-xl sm:shadow-2xl shadow-rose-900/10
+  group
+">
+  {/* Image Container */}
+  <div className="
+    absolute inset-0
+    bg-linear-to-br from-rose-100 via-amber-50 to-pink-100
+    grayscale-0
+    lg:grayscale-30 lg:group-hover:grayscale-0
+    transition-all duration-700
+  ">
+    <img
+      src="https://plus.unsplash.com/premium_photo-1710064057043-d301e344e348?w=600&auto=format&fit=crop&q=60"
+      alt="Dance Academy"
+      className="w-full h-full object-cover"
+    />
+  </div>
 
-                {/* Hover Scale Effect */}
-                <motion.div
-                  initial={{ scale: 1 }}
-                  whileHover={{ scale: 1.05 }}
-                  transition={{ duration: 0.7, ease: [0.25, 0.46, 0.45, 0.94] }}
-                  className="absolute inset-0"
-                />
+  {/* Hover Scale – Desktop only */}
+  <motion.div
+    initial={{ scale: 1 }}
+    whileHover={{ scale: 1.05 }}
+    transition={{ duration: 0.7, ease: [0.25, 0.46, 0.45, 0.94] }}
+    className="absolute inset-0 hidden lg:block"
+  />
 
-                {/* Border Glow on Hover */}
-                <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-700 rounded-tl-[80px] rounded-br-[80px] border-2 border-secondary shadow-[0_0_30px_rgba(242,139,0,0.3)]" />
-              </div>
+  {/* Border Glow – Desktop only */}
+  <div className="
+    absolute inset-0
+    opacity-0 lg:group-hover:opacity-100
+    transition-opacity duration-700
+    rounded-tl-4xl sm:rounded-tl-[48px] lg:rounded-tl-[80px]
+    rounded-br-4xl sm:rounded-br-[48px] lg:rounded-br-[80px]
+    border-2 border-secondary
+    shadow-[0_0_30px_rgba(242,139,0,0.3)]
+    hidden lg:block
+  " />
+</div>
+
 
               {/* Decorative Corner Elements */}
               <motion.div

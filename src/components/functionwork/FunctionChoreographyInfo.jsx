@@ -2,7 +2,7 @@ import { motion } from 'framer-motion';
 
 export default function FunctionChoreographyInfo() {
   return (
-    <div className="relative w-full py-20 md:py-20 lg:py-20 px-6" style={{ backgroundColor: 'var(--color-elegantLight)' }}>
+    <div className="relative w-full py-20 md:py-20 lg:py-20 px-4" style={{ backgroundColor: 'var(--color-elegantLight)' }}>
      
 
       <div className="max-w-7xl mx-auto">

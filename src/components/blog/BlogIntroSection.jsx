@@ -3,9 +3,9 @@ import { MessageSquare, Sparkles, BookOpen, TrendingUp, Music2, Music } from 'lu
 
 export default function BlogIntroSection() {
   return (
-    <div className="relative w-full py-20 md:py-20 px-6 overflow-hidden">
+    <div className="relative w-full py-20 md:py-20 px-4 overflow-hidden">
       {/* Premium gradient background */}
-      <div className="absolute inset-0 bg-gradient-to-br from-elegantLight via-white to-elegantLight/80" />
+      <div className="absolute inset-0 bg-linear-to-br from-elegantLight via-white to-elegantLight/80" />
       
       {/* Decorative background elements */}
       
@@ -98,7 +98,7 @@ export default function BlogIntroSection() {
                 ease: "easeInOut",
                 repeatDelay: 2,
               }}
-              className="absolute inset-0 bg-gradient-to-r from-transparent via-white/40 to-transparent"
+              className="absolute inset-0 bg-linear-to-r from-transparent via-white/40 to-transparent"
             />
           </motion.div>
         </div>
@@ -131,7 +131,7 @@ export default function BlogIntroSection() {
             <div className="relative">
               {/* Gradient border */}
               <div 
-                className="absolute inset-0 rounded-full p-[2px] "
+                className="absolute inset-0 rounded-full p-0.5 "
                
               >
                 <div className="w-full h-full  rounded-full  border border-primary"
@@ -142,7 +142,7 @@ export default function BlogIntroSection() {
             }} />
               </div>
               
-              <div className="relative flex items-center gap-3  px-8 py-3.5 rounded-full ">
+              <div className="relative flex items-center gap-3  px-4 py-3.5 rounded-full ">
                 <motion.div
                   initial={{ opacity: 0, scale: 0.9 }}
             whileInView={{ opacity: 1, scale: 1 }}
@@ -253,7 +253,7 @@ export default function BlogIntroSection() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8, delay: 0.4 }}
-            className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-16 max-w-4xl mx-auto"
+            className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-16 max-w-4xl mx-auto "
           >
             {[
               {
@@ -280,7 +280,7 @@ export default function BlogIntroSection() {
               >
                 {/* Gradient border */}
                 <div 
-                  className="absolute inset-0 rounded-2xl p-[1px] opacity-50 group-hover:opacity-100 transition-opacity duration-300"
+                  className="absolute inset-0 rounded-2xl p-px opacity-50 group-hover:opacity-100 transition-opacity duration-300"
                   style={{ 
                     background: 'linear-gradient(135deg, var(--color-primary), var(--color-secondary))'
                   }}
@@ -289,7 +289,7 @@ export default function BlogIntroSection() {
                 </div>
 
                 {/* Card content */}
-                <div className="relative bg-gradient-to-br from-white to-gray-50/30 backdrop-blur-xl rounded-2xl p-6 shadow-xl">
+                <div className="relative bg-linear-to-br from-white to-gray-50/30 backdrop-blur-xl rounded-2xl p-4 shadow-xl">
                   <div 
                     className="w-12 h-12 rounded-xl mb-4 flex items-center justify-center shadow-lg"
                     style={{ 

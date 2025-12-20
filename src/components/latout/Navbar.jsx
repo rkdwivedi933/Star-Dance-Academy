@@ -3,7 +3,7 @@ import { useEffect, useState } from 'react';
 import {  useNavigate, useLocation } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 import { MapPin, Menu, Phone, X } from 'lucide-react';
-import { div } from 'framer-motion/client';
+
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -131,7 +131,7 @@ useEffect(() => {
         animate={{ opacity: 1 }}
         exit={{ opacity: 0 }}
         onClick={() => setIsMenuOpen(false)}
-        className="fixed inset-0  z-40"
+        className="fixed inset-0 z-40"
       />
 
       {/* Sidebar */}
@@ -154,21 +154,37 @@ useEffect(() => {
         <div className="absolute -top-24 -right-20 w-56 h-56 bg-white/20 blur-3xl rounded-full" />
         <div className="absolute bottom-0 left-0 w-44 h-44 bg-black/10 blur-2xl rounded-full" />
 
-        {/* Close Button */}
-        <button
-          onClick={() => setIsMenuOpen(false)}
-          className="
-            absolute top-5 right-5 p-2 rounded-lg
-            bg-white/20 text-white
-            hover:bg-white/30 transition-all
-            shadow-md hover:scale-110
-          "
-        >
-          <X size={22} />
-        </button>
+        {/* Top Bar : Logo + Close */}
+        <div className="absolute top-5 right-5 left-5 flex items-center justify-between z-20">
+          {/* Logo */}
+          <button
+            onClick={() => handleLinkClick("/")}
+            className="flex items-center gap-2"
+          >
+            <img
+              src="https://www.tfptechnologies.in/_next/static/media/logo2.2e00e4b8.png"   // <-- apna logo path
+              alt="Logo"
+              className="w-9 h-9 rounded-lg object-contain  p-1"
+            />
+           
+          </button>
+
+          {/* Close Button */}
+          <button
+            onClick={() => setIsMenuOpen(false)}
+            className="
+              p-2 rounded-lg
+              bg-white/20 text-white
+              hover:bg-white/30 transition-all
+              shadow-md hover:scale-110
+            "
+          >
+            <X size={22} />
+          </button>
+        </div>
 
         {/* Links */}
-        <div className="flex flex-col space-y-4 relative z-10">
+        <div className="flex flex-col space-y-4 relative z-10 mt-4">
           {navLinks.map((link, index) => {
             const isActive = location.pathname === link.path;
 
@@ -210,7 +226,7 @@ useEffect(() => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.5, type: "spring" }}
             whileHover={{ scale: 1.08 }}
-            onClick={() => handleLinkClick('/enroll-now')}
+            onClick={() => handleLinkClick("/enroll-now")}
             className="
               mt-12 px-6 py-3 rounded-full
               text-white font-semibold tracking-wide
@@ -236,6 +252,7 @@ useEffect(() => {
     </>
   )}
 </AnimatePresence>
+
 
     </motion.nav>
     </div>

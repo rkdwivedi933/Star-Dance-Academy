@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 export default function DanceAcademyAbout() {
   return (
     <div
-      className="relative w-full py-20 md:py-20 lg:py-20 px-6"
+      className="relative w-full py-20 md:py-20 lg:py-20 px-4"
     
     >
      

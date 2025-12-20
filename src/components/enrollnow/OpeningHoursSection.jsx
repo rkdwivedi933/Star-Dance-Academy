@@ -8,7 +8,7 @@ export default function OpeningHoursSection() {
   ];
 
   return (
-    <div className="relative w-full py-10 md:py-10 px-6" >
+    <div className="relative w-full py-10 md:py-10 " >
      
 
       <div className="max-w-7xl mx-auto">

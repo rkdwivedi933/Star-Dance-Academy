@@ -10,7 +10,7 @@ export default function FunctionVideoSection() {
   const thumbnailUrl = "https://images.unsplash.com/photo-1511578314322-379afb476865?w=1200&q=80";
 
   return (
-    <div className="relative w-full py-20 md:py-20 lg:py-20 px-6" style={{ backgroundColor: 'var(--color-elegantLight)' }}>
+    <div className="relative w-full py-20 md:py-20 lg:py-20 px-4" style={{ backgroundColor: 'var(--color-elegantLight)' }}>
       <style>{`
         @theme {
           --color-primary: #f6466c;
