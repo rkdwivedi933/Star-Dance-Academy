@@ -29,7 +29,7 @@ const DanceAcademyHero = () => {
   };
   return (
     <div
-  className="
+      className="
     relative
     min-h-full sm:min-h-full
     text-white
@@ -39,14 +39,13 @@ const DanceAcademyHero = () => {
     px-4 sm:px-6 md:px-10 lg:px-16 xl:px-24
     py-1   sm:py-12 md:py-16 lg:py-2
   "
->
-
+    >
       {/* Background Slideshow */}
-     <div className="absolute inset-0">
-  {images.map((img, index) => (
-    <div
-      key={index}
-      className={`
+      <div className="absolute inset-0">
+        {images.map((img, index) => (
+          <div
+            key={index}
+            className={`
         absolute inset-0
         bg-center bg-no-repeat mb-20 lg:mb-0
         transition-opacity duration-1000
@@ -54,13 +53,12 @@ const DanceAcademyHero = () => {
 
         bg-contain sm:bg-cover 
       `}
-      style={{ backgroundImage: `url('${img}')` }}
-    />
-  ))}
+            style={{ backgroundImage: `url('${img}')` }}
+          />
+        ))}
 
-  <div className="absolute inset-0  bg-linear-to-r from-black/90 via-black/70 to-black/50" />
-</div>
-
+        <div className="absolute inset-0  bg-linear-to-r from-black/90 via-black/70 to-black/50" />
+      </div>
 
       {/* Decorative Elements */}
 
@@ -100,29 +98,27 @@ const DanceAcademyHero = () => {
               style={{ animationDelay: "0.8s", animationFillMode: "forwards" }}
             >
               <button
-            
-  onClick={() =>
-    window.open(
-      "https://www.youtube.com/watch?v=VIDEO_ID",
-      "_blank",
-      "noopener,noreferrer"
-    )
-  }
-  onMouseEnter={() => setIsVideoHovered(true)}
-  onMouseLeave={() => setIsVideoHovered(false)}
-  className="group cursor-pointer flex items-center gap-3 px-8 py-4 bg-transparent border-2 border-primary text-white rounded-full hover:bg-primary hover:text-white transition-all duration-300 hover:scale-105"
->
-  <Play
-    className="w-5 h-5 group-hover:scale-110 transition-transform"
-    fill="currentColor"
-  />
+                onClick={() =>
+                  window.open(
+                    "https://www.youtube.com/watch?v=VIDEO_ID",
+                    "_blank",
+                    "noopener,noreferrer"
+                  )
+                }
+                onMouseEnter={() => setIsVideoHovered(true)}
+                onMouseLeave={() => setIsVideoHovered(false)}
+                className="group cursor-pointer flex items-center gap-3 px-8 py-4 bg-transparent border-2 border-primary text-white rounded-full hover:bg-primary hover:text-white transition-all duration-300 hover:scale-105"
+              >
+                <Play
+                  className="w-5 h-5 group-hover:scale-110 transition-transform"
+                  fill="currentColor"
+                />
 
-  {/*  ZigZag Text */}
-  <span className="font-semibold overflow-hidden">
-    <ZigZagText1 text="Watch Video" />
-  </span>
-</button>
-
+                {/*  ZigZag Text */}
+                <span className="font-semibold overflow-hidden">
+                  <ZigZagText1 text="Watch Video" />
+                </span>
+              </button>
 
               <motion.button
                 whileHover={{
@@ -130,7 +126,7 @@ const DanceAcademyHero = () => {
                   transition: { type: "spring", stiffness: 300 },
                 }}
                 whileTap={{ scale: 0.95 }}
-                className="group cursor-pointer relative px-8 py-4 text-white rounded-full font-medium text-2xl shadow-2xl overflow-hidden"
+                className="group cursor-pointer relative px-11 py-4 text-white rounded-full font-medium text-2xl shadow-2xl overflow-hidden"
                 style={{
                   background: `linear-gradient(135deg, var(--color-primary) 0%, var(--color-secondary) 100%)`,
                 }}
@@ -191,9 +187,6 @@ const DanceAcademyHero = () => {
               <div className="text-sm text-gray-400">Dance Styles</div>
             </div>
           </div>
-
-        
-
         </div>
       </div>
 
