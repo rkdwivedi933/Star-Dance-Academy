@@ -4,7 +4,7 @@ import {  School, Heart, User, GraduationCap, Briefcase ,ArrowRight,Layers } fro
 import { useNavigate } from 'react-router-dom';
 
 
-const ServicesCards = () => {
+const FunctionCards = () => {
   const services = [
   {
     id: 1,
@@ -35,7 +35,27 @@ const ServicesCards = () => {
     accentColor: "var(--color-primary)",
     bubbleColor: "rgba(246, 70, 108, 0.1)",
     link: "/personal-events",
-  }
+  },
+  {
+    id: 4,
+    icon: GraduationCap,
+    title: "College Events",
+    description:
+      "High-energy and trendy dance performances for college fests, youth festivals, flash mobs, and stage shows.",
+    accentColor: "var(--color-secondary)",
+    bubbleColor: "rgba(242, 139, 0, 0.1)",
+    link: "/college-events",
+  },
+  {
+    id: 5,
+    icon: Briefcase,
+    title: "Corporate Events",
+    description:
+      "Professional and entertaining dance performances tailored for corporate events, annual meets, and brand promotions.",
+    accentColor: "var(--color-primary)",
+    bubbleColor: "rgba(246, 70, 108, 0.1)",
+    link: "/corporate-events",
+  },
 ];
 
   const containerVariants = {
@@ -221,29 +241,10 @@ const ServicesCards = () => {
           })}
         </motion.div>
 
-        {/* Bottom CTA */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6, delay: 0.4 }}
-          className="text-center mt-12"
-        >
-          <motion.button
-          onClick={handleExplore}
-            whileHover={{ scale: 1.05, y: -2 }}
-            whileTap={{ scale: 0.95 }}
-            className="px-8 py-4 rounded-full font-semibold text-white shadow-xl cursor-pointer"
-            style={{
-              background: `linear-gradient(135deg, var(--color-primary), var(--color-secondary))`
-            }}
-          >
-            Explore All Services
-          </motion.button>
-        </motion.div>
+        
       </div>
     </section>
   );
 };
 
-export default ServicesCards;
+export default FunctionCards;

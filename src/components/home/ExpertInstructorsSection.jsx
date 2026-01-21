@@ -8,7 +8,7 @@ import {
   Youtube,
   AwardIcon,
 } from "lucide-react";
-import { section } from "framer-motion/client";
+
 
 /* ================= INSTRUCTOR CARD ================= */
 
@@ -83,7 +83,7 @@ const ExpertInstructorCard = ({
       {/* CONTENT */}
       <div className="p-5 sm:p-6">
         <h3 className="text-lg sm:text-xl font-bold mb-2">{name}</h3>
-        <p className="text-gray-600 text-sm mb-2">{role}</p>
+        {/* <p className="text-gray-600 text-sm mb-2">{role}</p> */}
 
         {/* SOCIAL */}
         <div className="flex gap-3 mb-2">
@@ -104,7 +104,7 @@ const ExpertInstructorCard = ({
         </div>
 
         {/* BIO */}
-        <p className="text-sm text-gray-600">{shortBio}</p>
+        <p className="text-sm text-gray-600 line-clamp-2">{shortBio}</p>
 
         <AnimatePresence>
           {isExpanded && (
@@ -151,13 +151,14 @@ const ExpertInstructorsSection = () => {
   const instructors = [
     {
       image:
-        "https://images.unsplash.com/photo-1623813754430-44650fd2a905?w=600&auto=format&fit=crop&q=60",
-      name: "Isabella Martinez",
-      role: "Principal Ballet Instructor",
+        "https://images.unsplash.com/photo-1724435811349-32d27f4d5806?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8cHJvZmlsZSUyMGJveXN8ZW58MHx8MHx8fDA%3D",
+      name: "Rishi Singh Parihar",
+      // role: "Principal Ballet Instructor",
       shortBio:
-        "Former principal dancer with the Royal Ballet. 15+ years of experience.",
-      fullBio:
-        "Trained at the Royal Ballet School, performed across Europe, and mentored dancers who joined international companies.",
+  "Boogie Woogie Session 1 specialist with 8+ years of professional teaching and stage performance experience.",
+fullBio:
+  "Professionally trained dancer with a strong foundation in classical techniques and international exposure. Has performed across multiple stages, guided aspiring dancers, and helped students grow into confident, performance-ready artists.",
+
       socialLinks: {
         instagram: "#",
         facebook: "#",
@@ -166,13 +167,15 @@ const ExpertInstructorsSection = () => {
     },
     {
       image:
-        "https://images.unsplash.com/photo-1603415526960-f7e0328c63b1?q=80&w=1170",
-      name: "Marcus Chen",
-      role: "Contemporary Director",
+        "https://images.unsplash.com/photo-1618482563290-c0161d5f0d1e?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1yZWxhdGVkfDF8fHxlbnwwfHx8fHw%3D",
+      name: "Subham Singh",
+      // role: "Contemporary Director",
       shortBio:
-        "Award-winning choreographer specializing in contemporary fusion.",
-      fullBio:
-        "Blends Eastern & Western dance traditions. Featured in Dance Magazine and global masterclasses.",
+  "Dance professional with 4 years of practical training and performance experience.",
+
+fullBio:
+  "Received professional dance training through multiple workshops and intensive camps in Delhi and Ahmedabad, Gujarat. Participated in renowned platforms such as Hussle Hood, Jashn-e-Kala, Rolls of Dancing, and TWB.",
+
       socialLinks: {
         instagram: "#",
         facebook: "#",
@@ -181,12 +184,66 @@ const ExpertInstructorsSection = () => {
     },
     {
       image:
-        "https://images.unsplash.com/photo-1688888745596-da40843a8d45?w=600&auto=format&fit=crop&q=60",
-      name: "David Thompson",
-      role: "Hip Hop Instructor",
-      shortBio: "International hip hop champion & street dance pioneer.",
-      fullBio:
-        "Winner of multiple world championships and collaborator with top music artists.",
+        "https://plus.unsplash.com/premium_photo-1669782051640-1f503f31d916?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1yZWxhdGVkfDR8fHxlbnwwfHx8fHw%3D",
+      name: "Sam Singh Rajput",
+      // role: "Hip Hop Instructor",
+     shortBio:
+  "Professionally trained dancer with 4 years of advanced learning in Delhi.",
+
+fullBio:
+  "Holds a professional Hip-Hop diploma from a recognized Delhi dance studio. Has been selected for major dance camps and platforms such as Hustle Hood, Dance Deewane Season 03, and Jashn-e-Kala, gaining valuable stage and performance experience.",
+
+      socialLinks: {
+        instagram: "#",
+        facebook: "#",
+        youtube: "#",
+      },
+    },
+    {
+      image:
+        "https://images.unsplash.com/photo-1573967889948-f78a7a4a9b05?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1yZWxhdGVkfDIyfHx8ZW58MHx8fHx8",
+      name: "Aditya Verma",
+      // role: "Hip Hop Instructor",
+      shortBio:
+  "Dedicated hip-hop instructor with a strong foundation in street dance styles.",
+
+fullBio:
+  "A passionate dance professional focused on hip-hop and street dance training. Known for energetic teaching methods and helping students build confidence, rhythm, and performance skills.",
+
+      socialLinks: {
+        instagram: "#",
+        facebook: "#",
+        youtube: "#",
+      },
+    },
+    {
+      image:
+        "https://images.unsplash.com/photo-1694871420373-e9c1031b91ee?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1yZWxhdGVkfDN8fHxlbnwwfHx8fHw%3D",
+      name: "Anurag Rajput",
+      // role: "Hip Hop Instructor",
+    shortBio:
+  "Experienced hip-hop dancer with a strong background in street dance styles.",
+
+fullBio:
+  "A dedicated dance professional with hands-on experience in hip-hop and street dance. Actively involved in performances, training sessions, and creative collaborations.",
+
+      socialLinks: {
+        instagram: "#",
+        facebook: "#",
+        youtube: "#",
+      },
+    },
+    {
+      image:
+        "https://images.unsplash.com/photo-1642365042569-c5c322660b7c?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1yZWxhdGVkfDEzfHx8ZW58MHx8fHx8",
+      name: "Ankit Rawat",
+      // role: "Hip Hop Instructor",
+    shortBio:
+  "Highly skilled hip-hop dancer with expertise in street dance styles.",
+
+fullBio:
+  "An accomplished dance professional with extensive experience in hip-hop and street dance. Has participated in high-level competitions, stage performances, and creative collaborations with fellow artists.",
+
       socialLinks: {
         instagram: "#",
         facebook: "#",
