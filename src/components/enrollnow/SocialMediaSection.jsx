@@ -6,7 +6,7 @@ export default function SocialMediaSection() {
     { 
       icon: Instagram, 
       name: 'Instagram', 
-      url: 'https://instagram.com',
+      url: 'https://www.instagram.com/harsh_enterprises.mp/',
       color: '#E4405F'
     },
     { 

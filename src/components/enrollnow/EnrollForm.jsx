@@ -79,19 +79,29 @@ export default function EnrollForm() {
     }));
   };
 
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-    setIsSubmitting(true);
-    
-    // Simulate form submission
-    await new Promise(resolve => setTimeout(resolve, 2000));
-    
-    console.log('Form submitted:', formData);
-    alert('Thank you for reaching out! We will contact you soon.');
-    
-    setFormData({ fullName: '', phone: '', email: '', message: '' });
-    setIsSubmitting(false);
-  };
+  
+const handleSubmit = (e) => {
+  e.preventDefault();
+
+  const phoneNumber = "916264249659"; 
+
+  const message = `
+New Inquiry From Star Dance & Fitness Academy 
+
+ Name: ${formData.fullName}
+ Phone: ${formData.phone}
+ Email: ${formData.email || 'Not provided'}
+
+ Message:
+${formData.message}
+`;
+
+  const whatsappURL = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(
+    message
+  )}`;
+
+  window.open(whatsappURL, "_blank");
+};
 
   return (
     <div className="min-h-full  bg-gray-100  py-20 sm:py-20 px-4 sm:px-6 lg:px-8">
@@ -206,7 +216,7 @@ export default function EnrollForm() {
                
                 
                 {/* Main Button */}
-                <div className="relative bg-linear-to-r from-primary to-secondary text-white py-4 sm:py-5 rounded-xl font-bold text-base sm:text-lg transition-all overflow-hidden">
+                <div onSubmit={handleSubmit}  className="relative bg-linear-to-r from-primary to-secondary text-white py-4 sm:py-5 rounded-xl font-bold text-base sm:text-lg transition-all overflow-hidden">
                  
                   
                   {/* Button Content */}
@@ -254,7 +264,7 @@ export default function EnrollForm() {
           <p className="text-gray-600">
             Prefer to call? Reach us at{' '}
             <a href="tel:+919876543210" className="text-primary font-semibold hover:underline">
-              +91 98765 43210
+              +91 6264249659
             </a>
           </p>
         </motion.div>

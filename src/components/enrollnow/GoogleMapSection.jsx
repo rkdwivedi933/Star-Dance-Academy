@@ -3,7 +3,9 @@ import { Map } from 'lucide-react';
 
 export default function GoogleMapSection() {
   // Replace with your actual Google Maps embed URL
-  const mapUrl = "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3680.3207!2d75.8577!3d22.7196!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjLCsDQzJzEwLjYiTiA3NcKwNTEnMjcuNyJF!5e0!3m2!1sen!2sin!4v1234567890";
+  const mapUrl =
+  "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3624.5801206401546!2d80.8401807!3d24.5727052!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39847f9b6b4d11bb%3A0x1c5e727de46bca90!2sStar%20Dance%20%26%20Fitness%20Academy!5e0!3m2!1sen!2sin!4v1705320000000";
+
 
   return (
     <div className="relative w-full py-20 md:py-20 px-4" >
@@ -81,19 +83,8 @@ export default function GoogleMapSection() {
 
            
 
-            {/* Decorative corner accents */}
-            <div 
-              className="absolute top-0 left-0 w-16 h-16 opacity-15 rounded-tl-xl"
-              style={{
-                background: `linear-gradient(135deg, var(--color-primary) 0%, transparent 100%)`
-              }}
-            />
-            <div 
-              className="absolute top-0 right-0 w-20 h-20 opacity-15 rounded-tr-xl"
-              style={{
-                background: `linear-gradient(135deg, transparent 0%, var(--color-secondary) 100%)`
-              }}
-            />
+          
+         
           </div>
         </motion.div>
 

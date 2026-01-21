@@ -38,8 +38,8 @@ const ContactCard = ({ icon: Icon, title, children, delay }) => {
 };
 
 export default function EnrollContactInfo() {
-  const phoneNumber = "+919876543210";
-  const whatsappNumber = "919876543210";
+  const phoneNumber = "+916264249659";
+  const whatsappNumber = "916264249659";
 
   return (
     <div className="min-h-full bg-linear-to-br bg-white py-20 sm:py-20 md:py-20 px-4 sm:px-6 lg:px-8">
@@ -102,7 +102,7 @@ export default function EnrollContactInfo() {
               {phoneNumber}
             </motion.a>
             <p className="text-gray-500 text-sm mt-2">
-              Mon - Sat: 9:00 AM - 8:00 PM
+              Mon - Sat: 8:30 AM - 9:00 PM
             </p>
           </ContactCard>
 
@@ -130,12 +130,12 @@ export default function EnrollContactInfo() {
           {/* Address Card */}
           <ContactCard icon={MapPin} title="Visit Us" delay={0.6}>
             <div className="text-gray-700 text-base sm:text-lg leading-relaxed">
-              <p className="font-semibold mb-1">Dance Studio Academy</p>
-              <p>123 Rhythm Street, Dance Plaza</p>
-              <p>Satna, Madhya Pradesh 485001</p>
+              <p className="font-semibold mb-1">Star Dance & Fitness Academy</p>
+              <p>Second Floor Above Hidden Cafe Next to Vidya Marriage Garden</p>
+              <p>Near Old Bus Stand, Satna, Madhya Pradesh 485001</p>
             </div>
             <motion.a
-              href="https://maps.google.com"
+              href="https://www.google.com/maps/place/Star+Dance+%26+Fitness+Academy/@24.5727052,80.8401807,805m/data=!3m2!1e3!4b1!4m6!3m5!1s0x39847f9b6b4d11bb:0x1c5e727de46bca90!8m2!3d24.5727052!4d80.8427556!16s%2Fg%2F11gxn0p75c?entry=ttu&g_ep=EgoyMDI2MDExMy4wIKXMDSoASAFQAw%3D%3D"
               target="_blank"
               rel="noopener noreferrer"
               whileHover={{ scale: 1.05 }}

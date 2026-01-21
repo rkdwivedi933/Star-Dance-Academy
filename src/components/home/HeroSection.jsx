@@ -182,19 +182,19 @@ const DanceAcademyHero = () => {
           <div className="flex items-center gap-12">
             <div>
               <div className="text-xl lg:text-2xl font-bold text-primary">
-                <CountUP end={500} />+
+                <CountUP end={5670} />+
               </div>
               <div className="text-sm text-gray-400">Students</div>
             </div>
             <div>
               <div className="text-xl lg:text-2xl font-bold text-primary">
-                <CountUP end={20} />+
+                <CountUP end={6} />+
               </div>
               <div className="text-sm text-gray-400">Instructors</div>
             </div>
             <div>
               <div className="text-xl lg:text-2xl font-bold text-primary">
-                <CountUP end={15} />+
+                <CountUP end={12} />+
               </div>
               <div className="text-sm text-gray-400">Dance</div>
             </div>
